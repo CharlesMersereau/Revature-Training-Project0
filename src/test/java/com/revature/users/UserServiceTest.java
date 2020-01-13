@@ -16,6 +16,29 @@ public class UserServiceTest {
 	}
 
 	@Test
+	public void authenticateAttemptUserThatExistsCorrectly() {
+		User user = new Customer("theodore","teddy");
+		users.registerUser(user);
+		assertTrue(users.authenticateUser(user) != null);
+	}
+	
+	@Test
+	public void authenticateAttemptUserThatExistsFailure() {
+		User user1 = new Customer("marcus","morris");
+		User user2 = new Customer("marcus","aurelius");
+		users.registerUser(user1);
+		assertTrue(users.authenticateUser(user2) == null);
+	}
+	
+	@Test
+	public void authenticateAttemptUserThatDoesNotExist() {
+		User user1 = new Customer("michealScott","paper");
+		User user2 = new Customer("dwightSchrute","paper");
+		users.registerUser(user1);
+		assertTrue(users.authenticateUser(user2) == null);
+	}
+	
+	@Test
 	public void testFindUserTrue() {
 		User user = new Customer("michaelj","thegoat");
 		users.registerUser(user);
@@ -42,28 +65,5 @@ public class UserServiceTest {
 		assertTrue(users.registerUser(user));
 		user.setPassword("batman");
 		assertFalse(users.registerUser(user));
-	}
-
-	@Test
-	public void authenticateAttemptUserThatExistsCorrectly() {
-		User user = new Customer("theodore","teddy");
-		users.registerUser(user);
-		assertTrue(users.authenticateUser(user) != null);
-	}
-	
-	@Test
-	public void authenticateAttemptUserThatExistsFailure() {
-		User user1 = new Customer("marcus","morris");
-		User user2 = new Customer("marcus","aurelius");
-		users.registerUser(user1);
-		assertTrue(users.authenticateUser(user2) == null);
-	}
-	
-	@Test
-	public void authenticateAttemptUserThatDoesNotExist() {
-		User user1 = new Customer("michealScott","paper");
-		User user2 = new Customer("dwightSchrute","paper");
-		users.registerUser(user1);
-		assertTrue(users.authenticateUser(user2) == null);
 	}
 }
