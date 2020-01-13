@@ -21,5 +21,10 @@ public class Employee extends User {
 	public void viewAllPayments() {
 		
 	}
+	
+	@Override
+	public void displayOptions() {
+		
+	};
 
 }

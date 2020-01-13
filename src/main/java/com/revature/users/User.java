@@ -1,8 +1,12 @@
 package com.revature.users;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 	private String username;
 	private String password;
+	
+	public void displayOptions() {};
 	
 	public String getUsername() {
 		return username;
@@ -22,5 +26,15 @@ public class User {
 	
 	public void viewCars() {
 		
+	}
+
+	public User() {
+		super();
+	}
+
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
 	}
 }
