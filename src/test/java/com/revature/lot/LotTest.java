@@ -20,7 +20,7 @@ public class LotTest {
 
 	@Test
 	public void addCar() {
-		Car newCar = new Car("ford","fiesta");
+		Car newCar = new Car("ford","fiesta","2008","135,000");
 		lot.addCar(newCar);
 		ArrayList<Car> cars = lot.getCars();
 		assertTrue(cars.get(0).getMake().equals(newCar.getMake()));
@@ -30,8 +30,8 @@ public class LotTest {
 	public void addAnotherCarOfSameMakeAndModel() {
 		ArrayList<Car> cars = lot.getCars();
 		assertEquals(0, cars.size());
-		Car newCar1 = new Car("toyota","camry");
-		Car newCar2 = new Car("toyota","camry");
+		Car newCar1 = new Car("toyota","camry","2013","55,000");
+		Car newCar2 = new Car("toyota","camry","2013","58,000");
 		lot.addCar(newCar1);
 		lot.addCar(newCar2);
 		cars = lot.getCars();
@@ -49,8 +49,8 @@ public class LotTest {
 	public void carsOfSameMakeAndModelHaveDifferentIdm() {
 		ArrayList<Car> cars = lot.getCars();
 		assertEquals(0, cars.size());
-		Car newCar1 = new Car("toyota","camry");
-		Car newCar2 = new Car("toyota","camry");
+		Car newCar1 = new Car("toyota","camry","2004","195,000");
+		Car newCar2 = new Car("toyota","camry","2005","203,000");
 		lot.addCar(newCar1);
 		lot.addCar(newCar2);
 		cars = lot.getCars();
@@ -59,7 +59,7 @@ public class LotTest {
 	
 	@Test
 	public void removeCarByObject() {
-		Car newCar = new Car("ford","mustang");
+		Car newCar = new Car("ford","mustang","2019","6,500");
 		lot.addCar(newCar);
 		lot.removeCar(newCar);
 		ArrayList<Car> cars = lot.getCars();
@@ -67,13 +67,16 @@ public class LotTest {
 	}
 	
 	@Test
-	public void removeCarByObjecThatIsNotThere() {
-		
+	public void removeCarByObjectThatIsNotThere() {
+		Car newCar = new Car("ford","mustang","1975","95,000");
+		lot.removeCar(newCar);
+		ArrayList<Car> cars = lot.getCars();
+		assertEquals(0,cars.size());
 	}
 	
 	@Test
 	public void removeCarById() {
-		Car newCar = new Car("ford","mustang");
+		Car newCar = new Car("ford","mustang","1976","83,000");
 		lot.addCar(newCar);
 		lot.removeCar("FM0");
 		ArrayList<Car> cars = lot.getCars();

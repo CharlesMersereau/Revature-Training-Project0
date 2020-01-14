@@ -1,0 +1,24 @@
+2020-01-13 22:45:18 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-13 22:45:18 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
+2020-01-13 22:46:56 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-13 22:46:56 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
+2020-01-13 23:01:02 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-13 23:01:02 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
+2020-01-13 23:02:28 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-13 23:02:28 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
+2020-01-13 23:06:14 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-13 23:06:14 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
+2020-01-13 23:06:54 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-13 23:06:54 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
+2020-01-13 23:08:50 INFO  root:25 - added new user: charles
+2020-01-13 23:09:23 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-13 23:09:23 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
+2020-01-13 23:09:44 INFO  root:25 - added new user: bigben
+2020-01-13 23:10:28 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-13 23:10:28 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
+2020-01-13 23:18:59 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-13 23:18:59 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
+2020-01-13 23:19:48 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-13 23:19:48 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
+2020-01-13 23:21:31 INFO  root:25 - Car added to lot: ID: FM2, 1985 FORD MUSTANG with 135,371 miles
+2020-01-13 23:22:48 INFO  root:25 - Car added to lot: ID: CC3, 2019 CHEVY CAMARO with 8,096 miles

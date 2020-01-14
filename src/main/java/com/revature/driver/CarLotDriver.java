@@ -3,6 +3,10 @@ package com.revature.driver;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.revature.dao.LotDAO;
+import com.revature.dao.LotDAOSerialization;
+import com.revature.dao.UserServiceDAO;
+import com.revature.dao.UserServiceDAOSerialization;
 import com.revature.lot.Lot;
 import com.revature.pojo.Car;
 import com.revature.users.Customer;
@@ -15,15 +19,20 @@ public class CarLotDriver {
 	
 	private static LoggerUtil logger = new LoggerUtil();
 	private static Scanner scan = new Scanner(System.in);
+	private static UserServiceDAO usDAO = new UserServiceDAOSerialization();
 	private static UserService users = new UserService();
+	private static LotDAO lotDAO = new LotDAOSerialization();
 	private static Lot lot = new Lot();
+	
 
 	public static void main(String[] args) {
 		
 		String option = "";
-
-		users.loadUsers();
-		lot.loadCars();
+		
+		users = usDAO.readUserService();
+		lot = lotDAO.readLot();
+//		lot.addCar(new Car("Ford", "Expedition","2000","209,000"));
+//		lot.addCar(new Car("Nissan", "Rogue", "2018","18,000"));
 		
 		do {
 			
@@ -66,13 +75,9 @@ public class CarLotDriver {
 				option = scan.nextLine();
 				
 				if("exit".equals(option)) {
-					
 					break;
-					
 				} else {
-					
 					user = getUserInfo();
-					
 				}
 			};
 			
@@ -97,6 +102,8 @@ public class CarLotDriver {
 			
 		} else if ("exit".equals(option)) {
 			
+			usDAO.persistUserService(users);
+			lotDAO.persistLot(lot);
 			System.out.println("Thank you for using the car lot tool. Goodbye!");
 			
 		} else if ("lot".equals(option)) {
@@ -108,49 +115,43 @@ public class CarLotDriver {
 			}
 			
 		} else if ("make".equals(option)) {
-			
-			logger.info("opened make offer");
-			
+						
 		} else if ("cancel".equals(option)) {
-			
-			logger.info("opened cancel offer");
-			
+						
 		} else if ("cars".equals(option)) {
-			
-			logger.info("opened cars");
 			
 		} else if ("my payments".equals(option)) {
 			
-			logger.info("opened my payments");
-			
 		} else if ("add".equals(option)) {
+			
 			System.out.println("Enter the information for the car you want to add");
 			System.out.println("Make: ");
 			String make = scan.nextLine();
+			
 			System.out.println("Model: ");
 			String model = scan.nextLine();
+			
 			System.out.println("Year: ");
 			String year = scan.nextLine();
+			
 			System.out.println("Mileage: ");
 			String mileage = scan.nextLine();
+			
 			lot.addCar(new Car(make, model, year, mileage));
+			
 		} else if ("remove".equals(option)) {
 			
 			System.out.println("Please enter the ID of the car you'd like to remove");
 			System.out.println("ID: ");
 			String id = scan.nextLine();
-			lot.removeCar(id);
-		} else if ("accept".equals(option)) {
 			
-			logger.info("opened accept offer");
+			lot.removeCar(id);
+			
+		} else if ("accept".equals(option)) {
 			
 		} else if ("reject".equals(option)) {
 			
-			logger.info("opened reject offer");
-			
 		} else if ("payments".equals(option)) {
-			
-			logger.info("opened payments");
 			
 		} else {
 			

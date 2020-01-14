@@ -1,6 +1,9 @@
 package com.revature.pojo;
 
-public class Car {
+import java.io.Serializable;
+
+public class Car implements Serializable {
+	
 	private String make;
 	private String model;
 	private String year;
@@ -15,26 +18,9 @@ public class Car {
 		this.mileage = mileage;
 	}
 
-	public Car(String make, String model, String year) {
-		super();
-		this.make = make;
-		this.model = model;
-		this.year = year;
-	}
-	
-	public Car(String make, String model) {
-		super();
-		this.make = make;
-		this.model = model;
-	}
-	
-	public Car() {
-		
-	}
-
 	@Override
 	public String toString() {
-		return "ID: " + id + "\n" + year + " " + make.toUpperCase() + " " + model.toUpperCase() + "\n" + mileage + " miles";
+		return "ID: " + id + ", " + year + " " + make.toUpperCase() + " " + model.toUpperCase() + " with " + mileage + " miles";
 	}
 	
 	public String getMake() {

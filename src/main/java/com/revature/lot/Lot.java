@@ -1,14 +1,15 @@
 package com.revature.lot;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.revature.pojo.Car;
 import com.revature.util.LoggerUtil;
 
-public class Lot {
+public class Lot implements Serializable {
 	private ArrayList<Car> cars = new ArrayList<Car>();
-	private LoggerUtil logger = new LoggerUtil();
+	private transient LoggerUtil logger = new LoggerUtil();
 	private int newIdNum = 0;
 	
 	public Lot() {};
@@ -31,11 +32,6 @@ public class Lot {
 
 	public ArrayList<Car> getCars() {
 		return cars;
-	}
-	
-	public void loadCars() {
-		this.addCar(new Car("Ford", "Expedition","2000","209,000"));
-		this.addCar(new Car("Nissan", "Rogue", "2018"));
 	}
 	
 	public void removeCar(Car car) {

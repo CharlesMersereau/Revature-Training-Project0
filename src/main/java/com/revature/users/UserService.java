@@ -7,9 +7,13 @@ import com.revature.util.LoggerUtil;
 
 public class UserService implements Serializable {
 	
-	private LoggerUtil logger = new LoggerUtil();
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private transient LoggerUtil logger = new LoggerUtil();
 	private ArrayList<User> users = new ArrayList<User>();
-	private User currentUser;
+	private transient User currentUser;
 	
 	public User authenticateUser(User user) {
 		
@@ -51,8 +55,8 @@ public class UserService implements Serializable {
 		return currentUser;
 	}
 	
-	public void loadUsers() {
-		users.add(new Employee("chuck","pass"));
+	public void addEmployee(String username, String password) {
+		users.add(new Employee(username,password));
 	}
 
 	public void logoutUser() {
