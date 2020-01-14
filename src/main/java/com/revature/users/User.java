@@ -3,6 +3,8 @@ package com.revature.users;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import com.revature.pojo.Car;
+
 public class User implements Serializable {
 	
 	private String username;

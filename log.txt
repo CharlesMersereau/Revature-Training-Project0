@@ -1,24 +1,381 @@
-2020-01-13 22:45:18 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-13 22:45:18 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
-2020-01-13 22:46:56 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-13 22:46:56 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
-2020-01-13 23:01:02 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-13 23:01:02 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
-2020-01-13 23:02:28 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-13 23:02:28 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
-2020-01-13 23:06:14 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-13 23:06:14 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
-2020-01-13 23:06:54 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-13 23:06:54 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
-2020-01-13 23:08:50 INFO  root:25 - added new user: charles
-2020-01-13 23:09:23 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-13 23:09:23 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
-2020-01-13 23:09:44 INFO  root:25 - added new user: bigben
-2020-01-13 23:10:28 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-13 23:10:28 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
-2020-01-13 23:18:59 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-13 23:18:59 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
-2020-01-13 23:19:48 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-13 23:19:48 INFO  root:25 - Car added to lot: ID: NR1, 2018 NISSAN ROGUE with 18,000 miles
-2020-01-13 23:21:31 INFO  root:25 - Car added to lot: ID: FM2, 1985 FORD MUSTANG with 135,371 miles
-2020-01-13 23:22:48 INFO  root:25 - Car added to lot: ID: CC3, 2019 CHEVY CAMARO with 8,096 miles
+2020-01-14 10:06:40 INFO  root:25 - added new employee: chuck
+2020-01-14 10:11:12 DEBUG root:21 - attempted to register a user using a username already in use: bigben
+2020-01-14 10:47:46 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
+2020-01-14 10:48:02 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15,000 miles
+2020-01-14 10:49:02 INFO  root:25 - an offer has been made with id null
+2020-01-14 10:49:18 DEBUG root:21 - user tried to make another offer on the same car
+2020-01-14 10:53:34 INFO  root:25 - Car added to lot: ID: FM2, 1978 FORD MUSTANG with 95000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
+2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
+2020-01-14 11:10:02 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:10:02 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:15:09 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:15:09 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:15:09 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:15:42 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:15:42 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:15:42 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:15:55 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:15:55 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:15:55 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:17:21 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:17:21 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:17:21 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:18:55 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:18:55 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:18:55 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:20:15 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:20:15 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:20:15 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:20:44 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:20:44 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:20:44 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:21:26 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:21:26 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:21:26 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:22:01 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:22:01 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:22:01 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:22:59 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:22:59 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:22:59 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:23:29 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:23:29 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:23:29 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:23:37 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:23:37 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:23:37 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:24:26 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:24:26 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:24:26 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:24:52 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:24:52 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:24:52 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:25:15 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:25:15 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:25:15 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:26:02 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:26:02 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:26:02 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:27:35 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:27:35 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:27:35 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:27:54 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:27:54 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:27:54 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:28:55 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:28:55 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:28:55 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:29:02 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:29:02 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:29:02 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:30:04 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:30:04 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:30:04 INFO  root:25 - an offer has been made with id null
+2020-01-14 11:30:22 INFO  root:25 - an offer has been made with id MFF11
+2020-01-14 11:30:22 INFO  root:25 - an offer has been made with id BTT01
+2020-01-14 11:30:22 INFO  root:25 - an offer has been made with id SFM341
+2020-01-14 11:31:45 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:31:45 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:31:45 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:31:45 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:32:34 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:32:34 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:32:34 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:32:34 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:33:30 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:33:30 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:33:30 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:33:30 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:34:56 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:34:56 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:34:56 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:34:56 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:34:56 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:34:56 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:34:56 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:37:19 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:37:19 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:37:19 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:37:19 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:37:19 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:37:19 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:37:19 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:37:25 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:37:25 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:37:25 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:37:25 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:37:25 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:37:25 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:37:25 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:39:29 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:39:29 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:39:29 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:39:29 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:39:29 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:39:29 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:39:29 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:40:19 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:40:19 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:40:19 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:40:19 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:40:19 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:40:19 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:40:19 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:41:15 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:41:15 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:41:15 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:41:15 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:41:15 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:41:15 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:41:15 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:45:10 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:45:10 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:45:10 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:45:10 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:45:10 WARN  root:17 - you cannot reject an offer once it has been accepted: SFM340
+2020-01-14 11:45:10 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:45:10 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:45:10 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:45:10 WARN  root:17 - you cannot reject an offer once it has been accepted: SFM340
+2020-01-14 11:45:22 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:45:22 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:45:22 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:45:22 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:45:22 WARN  root:17 - you cannot reject an offer once it has been accepted: SFM340
+2020-01-14 11:45:22 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:45:22 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:45:22 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:45:22 WARN  root:17 - you cannot reject an offer once it has been accepted: SFM340
+2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:54:24 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:54:24 WARN  root:17 - Attempt to reject an accepted offer: SFM340
+2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:54:24 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:54:24 WARN  root:17 - Attempt to reject an accepted offer: SFM340
+2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:54:31 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:54:31 WARN  root:17 - Attempt to reject an accepted offer: SFM340
+2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:54:31 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:54:31 WARN  root:17 - Attempt to reject an accepted offer: SFM340
+2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:55:05 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:55:05 WARN  root:17 - Attempt to reject an accepted offer: SFM340
+2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:55:05 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:55:05 WARN  root:17 - Attempt to reject an accepted offer: SFM340
+2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:56:17 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:56:17 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:58:45 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:58:45 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:59:35 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 11:59:35 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:00:47 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:00:47 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:01:14 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:01:14 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:02:59 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:02:59 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:03:15 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:03:15 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:04:28 WARN  root:17 - Attempt to accept a rejected offer SFM340
+2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:04:28 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:04:28 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:04:40 WARN  root:17 - Attempt to accept a rejected offer SFM340
+2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:04:40 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:04:40 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:05:46 WARN  root:17 - Attempt to accept a rejected offer SFM340
+2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:05:46 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:05:46 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id GTT1000
+2020-01-14 12:07:15 INFO  root:25 - an offer has been accepted: GTT1000
+2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:07:15 WARN  root:17 - Attempt to accept a rejected offer SFM340
+2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:07:15 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:07:15 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id GTT1000
+2020-01-14 12:09:43 INFO  root:25 - an offer has been accepted: GTT1000
+2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:09:43 WARN  root:17 - Attempt to accept a rejected offer SFM340
+2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:09:43 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:09:43 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id GTT1000
+2020-01-14 12:11:19 INFO  root:25 - an offer has been accepted: GTT1000
+2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:11:19 WARN  root:17 - Attempt to accept a rejected offer SFM340
+2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:11:19 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:11:19 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id SFF130
+2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id GTT1000
+2020-01-14 12:17:42 INFO  root:25 - an offer has been accepted: GTT1000
+2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:17:42 WARN  root:17 - Attempt to accept a rejected offer SFM340
+2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:17:42 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:17:42 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id SFF130
+2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id GTT1000
+2020-01-14 12:18:12 INFO  root:25 - an offer has been accepted: GTT1000
+2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:18:12 WARN  root:17 - Attempt to accept a rejected offer SFM340
+2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:18:12 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 12:18:12 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 12:36:23 INFO  root:25 - added new employee: chuck
+2020-01-14 12:36:48 INFO  root:25 - Car added to lot: ID: FM0, 1978 FORD MUSTANG with 95000 miles
+2020-01-14 12:37:03 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 12:37:25 INFO  root:25 - added new user: bigben
+2020-01-14 12:37:52 INFO  root:25 - an offer has been made with id BFM00
+2020-01-14 12:39:04 INFO  root:25 - an offer has been accepted: BFM00
+2020-01-14 12:39:04 INFO  root:25 - Car removed from lot: ID: FM0, 1978 FORD MUSTANG with 95000 miles
+2020-01-14 12:43:55 INFO  root:25 - added new employee: chuck
+2020-01-14 12:46:08 INFO  root:25 - added new employee: chuck
+2020-01-14 12:46:08 INFO  root:25 - added new user: bigben
+2020-01-14 12:46:08 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 12:46:08 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 12:49:03 INFO  root:25 - an offer has been made with id BFM00
+2020-01-14 12:49:22 INFO  root:25 - an offer has been accepted: BFM00
+2020-01-14 12:49:22 INFO  root:25 - Car removed from lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 12:53:44 INFO  root:25 - added new employee: chuck
+2020-01-14 12:53:44 INFO  root:25 - added new user: bigben
+2020-01-14 12:53:44 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 12:53:44 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 12:54:02 INFO  root:25 - an offer has been made with id BFM00
+2020-01-14 12:54:22 INFO  root:25 - an offer has been accepted: BFM00
+2020-01-14 12:54:22 INFO  root:25 - Car removed from lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 13:06:46 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 13:13:05 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 13:13:59 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 13:17:08 INFO  root:25 - an offer has been accepted: BNR10
+2020-01-14 13:17:08 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles

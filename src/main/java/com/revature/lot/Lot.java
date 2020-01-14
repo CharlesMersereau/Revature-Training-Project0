@@ -8,6 +8,7 @@ import com.revature.pojo.Car;
 import com.revature.util.LoggerUtil;
 
 public class Lot implements Serializable {
+	
 	private ArrayList<Car> cars = new ArrayList<Car>();
 	private transient LoggerUtil logger = new LoggerUtil();
 	private int newIdNum = 0;
@@ -21,7 +22,7 @@ public class Lot implements Serializable {
 	}
 	
 	public String createCarId(Car car) {
-		String id = null;
+		String id = "";
 		id = "" + car.getMake().toUpperCase().charAt(0) 
 				+ car.getModel().toUpperCase().charAt(0)
 				+ newIdNum; 
@@ -29,6 +30,14 @@ public class Lot implements Serializable {
 		return id;
 	}
 	
+	public int findCar(String carId) {
+		for (int i = 0; i < cars.size(); i++) {
+			if (cars.get(i).getId().equals(carId)) {
+				return i;
+			}
+		}
+		return -1;
+	}
 
 	public ArrayList<Car> getCars() {
 		return cars;
@@ -39,7 +48,7 @@ public class Lot implements Serializable {
 		logger.info("Car removed from lot: " + car);
 	}
 	
-	public void removeCar(String id) {
+	public Car removeCar(String id) {
 		Car car = null;
 		for (int i = 0; i < cars.size(); i++) {
 			if (cars.get(i).getId().equals(id)) {
@@ -52,6 +61,7 @@ public class Lot implements Serializable {
 		} else {
 			this.removeCar(car);
 		}
+		return car;
 	}
 
 }

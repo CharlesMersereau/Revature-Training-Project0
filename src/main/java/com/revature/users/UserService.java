@@ -3,17 +3,18 @@ package com.revature.users;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import com.revature.pojo.Car;
 import com.revature.util.LoggerUtil;
 
 public class UserService implements Serializable {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private transient LoggerUtil logger = new LoggerUtil();
+	private transient LoggerUtil logger;
 	private ArrayList<User> users = new ArrayList<User>();
 	private transient User currentUser;
+	
+	public UserService() {
+		logger = new LoggerUtil();
+	}
 	
 	public User authenticateUser(User user) {
 		
@@ -24,7 +25,7 @@ public class UserService implements Serializable {
 				currentUser = users.get(i);
 				return currentUser;
 			} else {
-				System.out.println("Sorry, but you have entered the incorrect password.");
+				System.out.println("You have entered the incorrect password for this account.");
 			}
 		} else {
 			System.out.println("We were unable to locate an account with that username: " + user.getUsername());
@@ -57,6 +58,7 @@ public class UserService implements Serializable {
 	
 	public void addEmployee(String username, String password) {
 		users.add(new Employee(username,password));
+		logger.info("added new employee: " + username);
 	}
 
 	public void logoutUser() {
@@ -65,19 +67,25 @@ public class UserService implements Serializable {
 	
 	public boolean registerUser(User user) {
 		
+		
 		if (this.findUser(user.getUsername()) == -1) {
 			
-			users.add(new Customer(user.getUsername(),user.getPassword()));
-			logger.info("added new user: " + user.getUsername());
+			User customer = new Customer(user.getUsername(), user.getPassword());
+			users.add(customer);
+			logger.info("added new user: " + customer.getUsername());
 			return true;
 			
 		} else {
 			
 			System.out.println("Sorry, but this username has already been taken.");
-			logger.error("attempted to register a user using a username already in use: " + user.getUsername());
+			logger.debug("attempted to register a user using a username already in use: " + user.getUsername());
 			return false;
 			
 		}
 		
+	}
+
+	public void transferCarToUser(Car car, String username) {
+		((Customer)users.get(findUser(username))).addCar(car);
 	}
 }
