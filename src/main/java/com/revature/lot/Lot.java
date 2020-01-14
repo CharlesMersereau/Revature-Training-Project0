@@ -11,6 +11,8 @@ public class Lot {
 	private LoggerUtil logger = new LoggerUtil();
 	private int newIdNum = 0;
 	
+	public Lot() {};
+	
 	public void addCar(Car car) {
 		car.setId(this.createCarId(car));
 		cars.add(car);

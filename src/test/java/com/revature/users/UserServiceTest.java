@@ -11,7 +11,7 @@ public class UserServiceTest {
 	private static UserService users;
 	
 	@Before
-	public void tearDown() throws Exception {
+	public void setUp() throws Exception {
 		users = new UserService();
 	}
 

@@ -2,7 +2,11 @@ package com.revature.users;
 
 import java.util.ArrayList;
 
+import com.revature.pojo.Car;
+
 public class Customer extends User {
+	
+	ArrayList<Car> myCars = new ArrayList<Car>();
 	
 	public Customer() {
 		super();
