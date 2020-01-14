@@ -1,3 +1,5 @@
+package com.revature.offer;
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;

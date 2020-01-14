@@ -482,3 +482,18 @@
 2020-01-14 15:54:18 INFO  root:25 - an offer has been accepted: SNR11
 2020-01-14 15:54:18 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
 2020-01-14 15:55:30 INFO  root:25 - an offer has been made with id SFE23
+2020-01-14 16:01:55 INFO  root:25 - an offer has been accepted: SFE23
+2020-01-14 16:01:55 INFO  root:25 - Car removed from lot: ID: FE2, 2000 FORD EXPEDITION with 209000 miles
+2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id MFF10
+2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id SFF130
+2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id BTT00
+2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id GTT1000
+2020-01-14 16:17:48 INFO  root:25 - an offer has been accepted: GTT1000
+2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 16:17:48 WARN  root:17 - Attempt to accept a rejected offer SFM340
+2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 16:17:48 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id SFM340
+2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id BFM341
+2020-01-14 16:17:48 INFO  root:25 - an offer has been accepted: SFM340
