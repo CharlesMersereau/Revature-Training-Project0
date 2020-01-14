@@ -20,6 +20,11 @@ public class Offer implements Serializable {
 		return username;
 	}
 	
+	@Override
+	public String toString() {
+		return  "ID: " + id + "  Status: " + status + ", from " + username + " for " + carId + " in the amount of " + amount;
+	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}

@@ -379,3 +379,106 @@
 2020-01-14 13:13:59 INFO  root:25 - an offer has been made with id BNR10
 2020-01-14 13:17:08 INFO  root:25 - an offer has been accepted: BNR10
 2020-01-14 13:17:08 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 13:37:29 INFO  root:25 - added new employee: chuck
+2020-01-14 13:37:29 INFO  root:25 - added new user: bigben
+2020-01-14 13:37:29 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 13:37:29 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 13:37:29 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 13:41:36 INFO  root:25 - added new employee: chuck
+2020-01-14 13:41:36 INFO  root:25 - added new user: bigben
+2020-01-14 13:41:36 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 13:41:36 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 13:41:36 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 13:42:37 INFO  root:25 - added new employee: chuck
+2020-01-14 13:42:37 INFO  root:25 - added new user: bigben
+2020-01-14 13:42:37 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 13:42:37 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 13:42:37 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 13:42:45 DEBUG root:21 - attempted to register a user using a username already in use: chuck
+2020-01-14 13:42:55 DEBUG root:21 - attempted to register a user using a username already in use: chuck
+2020-01-14 15:03:27 INFO  root:25 - added new employee: chuck
+2020-01-14 15:03:27 INFO  root:25 - added new user: bigben
+2020-01-14 15:03:27 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:03:27 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 15:03:27 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 15:03:50 INFO  root:25 - an offer has been made with id BFM01
+2020-01-14 15:04:02 DEBUG root:21 - user tried to make another offer on the same car
+2020-01-14 15:05:06 INFO  root:25 - added new employee: chuck
+2020-01-14 15:05:06 INFO  root:25 - added new user: bigben
+2020-01-14 15:05:06 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:05:06 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 15:05:06 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 15:05:23 INFO  root:25 - an offer has been made with id BFM01
+2020-01-14 15:05:38 DEBUG root:21 - user tried to make another offer on the same car
+2020-01-14 15:06:59 INFO  root:25 - an offer has been accepted: BFM01
+2020-01-14 15:06:59 INFO  root:25 - Car removed from lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:08:46 INFO  root:25 - added new employee: chuck
+2020-01-14 15:08:46 INFO  root:25 - added new user: bigben
+2020-01-14 15:08:46 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:08:46 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 15:08:46 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 15:11:13 INFO  root:25 - added new employee: chuck
+2020-01-14 15:11:13 INFO  root:25 - added new user: bigben
+2020-01-14 15:11:13 INFO  root:25 - added new user: sheed
+2020-01-14 15:11:13 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:11:13 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 15:11:13 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 15:11:13 INFO  root:25 - an offer has been made with id SNR11
+2020-01-14 15:11:13 INFO  root:25 - an offer has been made with id SFM02
+2020-01-14 15:11:56 INFO  root:25 - an offer has been accepted: SNR11
+2020-01-14 15:11:56 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
+2020-01-14 15:20:58 INFO  root:25 - added new employee: chuck
+2020-01-14 15:20:58 INFO  root:25 - added new user: bigben
+2020-01-14 15:20:58 INFO  root:25 - added new user: sheed
+2020-01-14 15:20:58 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:20:58 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 15:20:58 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 15:20:58 INFO  root:25 - an offer has been made with id SNR11
+2020-01-14 15:20:58 INFO  root:25 - an offer has been made with id SFM02
+2020-01-14 15:21:20 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 15:38:09 INFO  root:25 - added new employee: chuck
+2020-01-14 15:38:09 INFO  root:25 - added new user: bigben
+2020-01-14 15:38:09 INFO  root:25 - added new user: sheed
+2020-01-14 15:38:09 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:38:09 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 15:38:09 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 15:38:09 INFO  root:25 - an offer has been made with id SNR11
+2020-01-14 15:38:09 INFO  root:25 - an offer has been made with id SFM02
+2020-01-14 15:38:56 INFO  root:25 - added new employee: chuck
+2020-01-14 15:38:56 INFO  root:25 - added new user: bigben
+2020-01-14 15:38:56 INFO  root:25 - added new user: sheed
+2020-01-14 15:38:56 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:38:56 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 15:38:56 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 15:38:56 INFO  root:25 - an offer has been made with id SNR11
+2020-01-14 15:38:56 INFO  root:25 - an offer has been made with id SFM02
+2020-01-14 15:41:01 INFO  root:25 - added new employee: chuck
+2020-01-14 15:41:01 INFO  root:25 - added new user: bigben
+2020-01-14 15:41:01 INFO  root:25 - added new user: sheed
+2020-01-14 15:41:01 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:41:01 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 15:41:01 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 15:41:01 INFO  root:25 - an offer has been made with id SNR11
+2020-01-14 15:41:01 INFO  root:25 - an offer has been made with id SFM02
+2020-01-14 15:49:36 INFO  root:25 - added new employee: chuck
+2020-01-14 15:49:36 INFO  root:25 - added new user: bigben
+2020-01-14 15:49:36 INFO  root:25 - added new user: sheed
+2020-01-14 15:49:36 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:49:36 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 15:49:36 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 15:49:36 INFO  root:25 - an offer has been made with id SNR11
+2020-01-14 15:49:36 INFO  root:25 - an offer has been made with id SFM02
+2020-01-14 15:51:56 INFO  root:25 - added new employee: chuck
+2020-01-14 15:51:56 INFO  root:25 - added new user: bigben
+2020-01-14 15:51:56 INFO  root:25 - added new user: sheed
+2020-01-14 15:51:56 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 15:51:56 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 15:51:56 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 15:51:56 INFO  root:25 - an offer has been made with id SNR11
+2020-01-14 15:51:56 INFO  root:25 - an offer has been made with id SFM02
+2020-01-14 15:52:57 INFO  root:25 - Car added to lot: ID: FE2, 2000 FORD EXPEDITION with 209000 miles
+2020-01-14 15:53:24 INFO  root:25 - Car added to lot: ID: CC3, 2003 CHEVY CAMARO with 250000 miles
+2020-01-14 15:53:49 INFO  root:25 - Car removed from lot: ID: CC3, 2003 CHEVY CAMARO with 250000 miles
+2020-01-14 15:54:18 INFO  root:25 - an offer has been accepted: SNR11
+2020-01-14 15:54:18 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 15:55:30 INFO  root:25 - an offer has been made with id SFE23

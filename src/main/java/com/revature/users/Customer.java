@@ -20,7 +20,7 @@ public class Customer extends User {
 	
 	private void setOptions() {
 		options.add("'make' to make an offer on a car");
-		options.add("'my offers' to view your currently pending offers");
+		options.add("'my offers' to view your current offers");
 		options.add("'cancel' to cancel a current offer (recommended for rejected offers)");
 		options.add("'my cars' to view your cars");
 		options.add("'my payments' to view your remaining payments");		

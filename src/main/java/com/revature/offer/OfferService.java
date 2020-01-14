@@ -128,4 +128,37 @@ public class OfferService implements Serializable {
 	public ArrayList<Offer> getOffers() {
 		return offers;
 	}
-}
+
+	public ArrayList<Offer> getPendingOffers() {
+		
+		ArrayList<Offer> pendingOffers = new ArrayList<Offer>();
+		
+		for (int i = 0; i < offers.size(); i++) {
+			if (offers.get(i).getStatus().equals("Pending")) {
+				pendingOffers.add(offers.get(i));
+			} 
+		}
+		return pendingOffers;
+	}
+	
+	public ArrayList<Offer> getUserOffers(String username) {
+
+		ArrayList<Offer> userOffers = new ArrayList<Offer>();
+		
+		for (int i = 0; i < offers.size(); i++) {
+			if (offers.get(i).getUsername().equals(username)) {
+				userOffers.add(offers.get(i));
+			} 
+		}
+		return userOffers;
+	}
+	
+	public void rejectOffersOfRemovedCar(String carId) {
+		for (int i = 0; i < offers.size(); i++) {
+			if (offers.get(i).getCarId().equals(carId)) {
+				rejectOffer(offers.get(i).getId());
+			} 
+		}
+	}
+	
+ }

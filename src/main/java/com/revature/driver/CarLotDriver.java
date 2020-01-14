@@ -7,12 +7,16 @@ import com.revature.dao.LotDAO;
 import com.revature.dao.LotDAOSerialization;
 import com.revature.dao.OfferServiceDAO;
 import com.revature.dao.OfferServiceDAOSerialization;
+import com.revature.dao.PaymentServiceDAO;
+import com.revature.dao.PaymentServiceDAOSerialization;
 import com.revature.dao.UserServiceDAO;
 import com.revature.dao.UserServiceDAOSerialization;
 import com.revature.lot.Lot;
 import com.revature.offer.OfferService;
+import com.revature.payment.PaymentService;
 import com.revature.pojo.Car;
 import com.revature.pojo.Offer;
+import com.revature.pojo.Payment;
 import com.revature.users.Customer;
 import com.revature.users.User;
 import com.revature.users.UserService;
@@ -28,6 +32,8 @@ public class CarLotDriver {
 	private static Lot lot;
 	private static OfferServiceDAO offersDAO = new OfferServiceDAOSerialization();
 	private static OfferService offers;
+	private static PaymentServiceDAO paymentsDAO = new PaymentServiceDAOSerialization();;
+	private static PaymentService payments; 
 	
 
 	public static void main(String[] args) {
@@ -38,16 +44,24 @@ public class CarLotDriver {
 //		users = new UserService();
 //		users.addEmployee("chuck", "pass");
 //		users.registerUser(new User("bigben","thefro"));
+//		users.registerUser(new User("sheed","thefro"));
 //		lot = new Lot();
 //		lot.addCar(new Car("ford","mustang","1975","65000"));
-//		lot.addCar(new Car("nissan","roge","2019","15000"));
+//		lot.addCar(new Car("nissan","rogue","2019","15000"));
 //		offers = new OfferService();
 //		offers.makeOffer(new Offer("bigben","NR1",12500));
+//		offers.makeOffer(new Offer("sheed","NR1",12500));
+//		offers.makeOffer(new Offer("sheed","FM0",12500));
+//		payments = new PaymentService();
+//		payments.addPayment(new Payment("bigben","000",3600));
+//		payments.addPayment(new Payment("bigben","001",5400));
+//		payments.addPayment(new Payment("sheed","002",9900));
 		
 		// for Prod
 		users = usersDAO.readUserService();
 		lot = lotDAO.readLot();
 		offers = offersDAO.readOfferService();
+		payments = paymentsDAO.readPaymentService();
 		
 		do {
 			
@@ -61,7 +75,7 @@ public class CarLotDriver {
 	
 	private static void displayOptions() {
 		
-		System.out.println("Select an option...");
+		System.out.println("\nSelect an option from the list below\n");
 		
 		if (users.getCurrentUser() == null) {
 			System.out.println("'register' to register as a new user.");
@@ -80,7 +94,7 @@ public class CarLotDriver {
 		
 		if ("accept".equals(option)) {
 			
-			System.out.println("Enter the ID of the offer you'd like to accept");
+			System.out.println("\nEnter the ID of the offer you'd like to accept");
 			System.out.println("ID: ");
 			String offerId = scan.nextLine();
 			boolean accepted = offers.acceptOffer(offerId);
@@ -92,7 +106,7 @@ public class CarLotDriver {
 			
 		} else if ("add".equals(option)) {
 			
-			System.out.println("Enter the information for the car you want to add");
+			System.out.println("\nEnter the information for the car you want to add");
 			System.out.println("Make: ");
 			String make = scan.nextLine();
 			
@@ -109,7 +123,7 @@ public class CarLotDriver {
 			
 		} else if ("cancel".equals(option)) {
 			
-			System.out.println("Enter the ID of the offer you'd like to cancel");
+			System.out.println("\nEnter the ID of the offer you'd like to cancel");
 			System.out.println("ID: ");
 			offers.cancelOffer(scan.nextLine());
 						
@@ -118,23 +132,25 @@ public class CarLotDriver {
 			usersDAO.persistUserService(users);
 			lotDAO.persistLot(lot);
 			offersDAO.persistOfferService(offers);
-			System.out.println("Thank you for using the car lot tool. Goodbye!");
+			paymentsDAO.persistPaymentService(payments);
+			System.out.println("\nThank you for using the car lot tool. Goodbye!");
 			
 		} else if ("login".equals(option)) {
 			
-			System.out.println("Enter your credentials to log in");
+			System.out.println("\nEnter your credentials to log in");
 			User user = getUserInfo();
 			user = users.authenticateUser(user);
 			
 			while(user == null) {
 				
-				System.out.println("Enter 'exit' to exit login, or anything else to retry.");
+				System.out.println("\nEnter 'exit' to exit login, or anything else to retry.");
 				option = scan.nextLine();
 				
 				if("exit".equals(option)) {
 					break;
 				} else {
 					user = getUserInfo();
+					user = users.authenticateUser(user);
 				}
 			};
 			
@@ -152,7 +168,7 @@ public class CarLotDriver {
 			
 		} else if ("make".equals(option)) {
 			
-			System.out.println("Enter the car ID and the amount of the offer");
+			System.out.println("\nEnter the car ID and the amount of the offer");
 			System.out.println("Car ID: ");
 			String carId = scan.nextLine();
 			
@@ -163,14 +179,14 @@ public class CarLotDriver {
 				offers.makeOffer(new Offer(users.getCurrentUser().getUsername(),carId,amount));
 				
 			} else {
-				System.out.println("Sorry, but we could not locate a car with that ID.");
+				System.out.println("\nSorry, but we could not locate a car with that ID.");
 			}
 						
 		} else if ("my cars".equals(option)) {
 			
 			ArrayList<Car> myCars = ((Customer)users.getCurrentUser()).getMyCars();
 			
-			System.out.println("Here are your cars:\n");
+			System.out.println("\nHere are your cars:\n");
 			
 			for (Car car : myCars) {
 				System.out.println(car + "\n");
@@ -178,19 +194,48 @@ public class CarLotDriver {
 			
 		} else if ("my offers".equals(option)) {
 			
+			ArrayList<Offer> myOffers = offers.getUserOffers(users.getCurrentUser().getUsername());
+
+			System.out.println("\nHere are your current offers:\n");
+			
+			for (Offer offer : myOffers) {
+				System.out.println(offer + "\n");
+			}
+			
 		} else if ("my payments".equals(option)) {
+			
+			ArrayList<Payment> userPayments = payments.getUserPayments(users.getCurrentUser().getUsername());
+			
+			System.out.println("\nThese are the currently pending offers\n");
+			for (Payment payment : userPayments) {
+				System.out.println(payment + "\n");
+			}
 			
 		} else if ("offers".equals(option)) {
 			
+			ArrayList<Offer> pendingOffers = offers.getPendingOffers();
+			
+			System.out.println("\nThese are the currently pending offers\n");
+			for (Offer offer: pendingOffers) {
+				System.out.println(offer + "\n");
+			}
+			
 		} else if ("payments".equals(option)) {
+			
+			ArrayList<Payment> allPayments = payments.getPayments();
+			
+			System.out.println("\nThese are the currently pending offers\n");
+			for (Payment payment : allPayments) {
+				System.out.println(payment + "\n");
+			}
 			
 		} else if ("register".equals(option)) {
 			
-			System.out.println("Enter a username and password to register.");
+			System.out.println("\nEnter a username and password to register.");
 			User user = getUserInfo();
 			
 			while(!users.registerUser(user)) {
-				System.out.println("Enter 'exit' to exit the register page, or anything else to retry.");
+				System.out.println("\nEnter 'exit' to exit the register page, or anything else to retry.");
 				option = scan.nextLine();
 				if("exit".equals(option)) {
 					break;
@@ -201,21 +246,22 @@ public class CarLotDriver {
 			
 		} else if ("reject".equals(option)) {
 			
-			System.out.println("Enter the ID of the offer you'd like to reject");
+			System.out.println("\nEnter the ID of the offer you'd like to reject");
 			System.out.println("ID: ");
 			offers.rejectOffer(scan.nextLine());
 			
 		} else if ("remove".equals(option)) {
 			
-			System.out.println("Please enter the ID of the car you'd like to remove");
+			System.out.println("\nPlease enter the ID of the car you'd like to remove");
 			System.out.println("ID: ");
 			String id = scan.nextLine();
 			
 			lot.removeCar(id);
+			offers.rejectOffersOfRemovedCar(id);
 			
 		} else {
 			
-			System.out.println("Sorry, you have not entered a valid option. Please try again.");
+			System.out.println("\nSorry, you have not entered a valid option. Please try again.");
 			
 		}
 	}
