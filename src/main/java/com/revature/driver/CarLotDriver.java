@@ -100,8 +100,11 @@ public class CarLotDriver {
 			boolean accepted = offers.acceptOffer(offerId);
 			
 			if(accepted) {
-				Car car = lot.removeCar(offers.getOffer(offerId).getCarId());
-				users.transferCarToUser(car,offers.getOffer(offerId).getUsername());
+				Offer offer = offers.getOffer(offerId);
+				String username = offer.getUsername();
+				Car car = lot.removeCar(offer.getCarId());
+				payments.addPayment(new Payment(username,car.getId(),offer.getAmount()));
+				users.transferCarToUser(car,username);
 			}
 			
 		} else if ("add".equals(option)) {
