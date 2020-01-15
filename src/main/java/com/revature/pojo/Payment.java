@@ -9,7 +9,7 @@ public class Payment implements Serializable {
 	private transient LoggerUtil logger = new LoggerUtil();
 	private String username;
 	private String carId;
-	private int amount;
+	private float amount;
 	private int paymentsRemaining = 36;
 	
 	public Payment() {}
@@ -41,7 +41,7 @@ public class Payment implements Serializable {
 		this.carId = carId;
 	}
 	
-	public int getAmount() {
+	public float getAmount() {
 		return amount;
 	}
 	
@@ -49,9 +49,9 @@ public class Payment implements Serializable {
 		this.amount = amount;
 	}
 	
-	public int makePayment(int paymentAmount) {
+	public int makePayment(float paymentAmount) {
 		this.amount -= paymentAmount;
-		this.paymentsRemaining--;
+		this.paymentsRemaining -= 1;
 		logger.info("Payment made by " + username + " in the amount of " + paymentAmount + " for " + carId);
 		return this.paymentsRemaining;
 	}

@@ -19,7 +19,7 @@ public class PaymentService implements Serializable {
 	
 	public Payment getPayment(String carId) {
 		for (Payment payment : payments) {
-			if (payment.getCarId() == carId) {
+			if (payment.getCarId().equals(carId)) {
 				return payment;
 			}
 		}

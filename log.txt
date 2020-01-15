@@ -86,3 +86,42 @@
 2020-01-14 23:02:38 INFO  root:25 - System logged into by: sheed
 2020-01-14 23:03:03 INFO  root:25 - an offer has been made with id SHC35
 2020-01-14 23:03:59 INFO  root:25 - System logged out of by: sheed
+2020-01-15 09:23:30 INFO  root:25 - System booted up
+2020-01-15 09:23:36 INFO  root:25 - System logged into by: sheed
+2020-01-15 09:27:20 INFO  root:25 - System booted up
+2020-01-15 09:28:42 INFO  root:25 - System booted up
+2020-01-15 09:28:55 INFO  root:25 - System booted up
+2020-01-15 09:29:06 INFO  root:25 - System logged into by: sheed
+2020-01-15 09:29:32 INFO  root:25 - System logged out of by: sheed
+2020-01-15 09:29:35 INFO  root:25 - System logged into by: chuck
+2020-01-15 09:29:53 INFO  root:25 - An offer has been accepted of id: SFM02
+2020-01-15 09:29:53 INFO  root:25 - Car removed from lot of id: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-15 09:30:01 INFO  root:25 - System logged out of by: chuck
+2020-01-15 09:30:05 INFO  root:25 - System logged into by: sheed
+2020-01-15 09:30:25 INFO  root:25 - System booted up
+2020-01-15 09:30:30 INFO  root:25 - System logged into by: sheed
+2020-01-15 09:30:39 INFO  root:25 - System logged out of by: sheed
+2020-01-15 09:30:46 INFO  root:25 - System logged into by: chuck
+2020-01-15 09:31:16 INFO  root:25 - An offer has been accepted of id: SFM02
+2020-01-15 09:31:16 INFO  root:25 - Car removed from lot of id: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-15 09:31:31 INFO  root:25 - System logged out of by: chuck
+2020-01-15 09:31:37 INFO  root:25 - System logged into by: sheed
+2020-01-15 09:35:13 INFO  root:25 - System booted up
+2020-01-15 09:35:20 INFO  root:25 - System logged into by: sheed
+2020-01-15 09:35:30 INFO  root:25 - System logged out of by: sheed
+2020-01-15 09:35:39 INFO  root:25 - System logged into by: chuck
+2020-01-15 09:36:12 INFO  root:25 - An offer has been accepted of id: SFM02
+2020-01-15 09:36:12 INFO  root:25 - Car removed from lot of id: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-15 09:36:19 INFO  root:25 - System logged out of by: chuck
+2020-01-15 09:36:24 INFO  root:25 - System logged into by: sheed
+2020-01-15 09:38:39 INFO  root:25 - System booted up
+2020-01-15 09:38:51 INFO  root:25 - System logged into by: sheed
+2020-01-15 09:38:56 INFO  root:25 - System logged out of by: sheed
+2020-01-15 09:39:00 INFO  root:25 - System logged into by: chuck
+2020-01-15 09:39:23 INFO  root:25 - An offer has been accepted of id: SFM02
+2020-01-15 09:39:23 INFO  root:25 - Car removed from lot of id: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-15 09:39:36 INFO  root:25 - System logged out of by: chuck
+2020-01-15 09:39:40 INFO  root:25 - System logged into by: sheed
+2020-01-15 09:40:07 INFO  root:25 - Payment made by sheed in the amount of 263.89 for FM0
+2020-01-15 09:40:28 INFO  root:25 - Payment made by sheed in the amount of 500.0 for FM0
+2020-01-15 09:40:59 INFO  root:25 - System booted up

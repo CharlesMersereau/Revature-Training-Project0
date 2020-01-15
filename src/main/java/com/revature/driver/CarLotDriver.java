@@ -211,7 +211,7 @@ public class CarLotDriver {
 			System.out.println("ID of car to make a payment on: ");
 			String carId = scan.nextLine();
 			System.out.println("Amount of payment");
-			int amount = Integer.parseInt(scan.nextLine());
+			float amount = Float.parseFloat(scan.nextLine());
 			
 			Payment paymentToBeMadeOn = payments.getPayment(carId);
 			
@@ -226,7 +226,7 @@ public class CarLotDriver {
 			
 			ArrayList<Payment> userPayments = payments.getUserPayments(users.getCurrentUser().getUsername());
 			
-			System.out.println("\nThese are the currently pending offers\n");
+			System.out.println("\nThese are the current ongoing payments\n");
 			for (Payment payment : userPayments) {
 				System.out.println(payment.getRemainingPayments() + "\n");
 			}
@@ -244,7 +244,7 @@ public class CarLotDriver {
 			
 			ArrayList<Payment> allPayments = payments.getPayments();
 			
-			System.out.println("\nThese are the currently pending offers\n");
+			System.out.println("\nThese are all the currently ongoing payments\n");
 			for (Payment payment : allPayments) {
 				System.out.println(payment.getUsername() + " has " + payment.getRemainingPayments() + "\n");
 			}
