@@ -48,20 +48,20 @@ public class CarLotDriver {
 //		lot = new Lot();
 //		lot.addCar(new Car("ford","mustang","1975","65000"));
 //		lot.addCar(new Car("nissan","rogue","2019","15000"));
+//		lot.addCar(new Car("chevy","camaro","2015","28000"));
 //		offers = new OfferService();
 //		offers.makeOffer(new Offer("bigben","NR1",12500));
-//		offers.makeOffer(new Offer("sheed","NR1",12500));
-//		offers.makeOffer(new Offer("sheed","FM0",12500));
+//		offers.makeOffer(new Offer("sheed","NR1",15000));
+//		offers.makeOffer(new Offer("sheed","FM0",9500));
 //		payments = new PaymentService();
-//		payments.addPayment(new Payment("bigben","000",3600));
-//		payments.addPayment(new Payment("bigben","001",5400));
-//		payments.addPayment(new Payment("sheed","002",9900));
+		
 		
 		// for Prod
 		users = usersDAO.readUserService();
 		lot = lotDAO.readLot();
 		offers = offersDAO.readOfferService();
 		payments = paymentsDAO.readPaymentService();
+		logger.info("System booted up");
 		
 		do {
 			
@@ -205,20 +205,37 @@ public class CarLotDriver {
 				System.out.println(offer + "\n");
 			}
 			
+		} else if ("make payment".equals(option)) {
+			
+			System.out.println("\nLet's get some info for your payment");
+			System.out.println("ID of car to make a payment on: ");
+			String carId = scan.nextLine();
+			System.out.println("Amount of payment");
+			int amount = Integer.parseInt(scan.nextLine());
+			
+			Payment paymentToBeMadeOn = payments.getPayment(carId);
+			
+			if (paymentToBeMadeOn != null) {
+				paymentToBeMadeOn.makePayment(amount);
+			} else {
+				System.out.println("\nCannot find a payment for you mathcing that car ID");
+			}
+			
+			
 		} else if ("my payments".equals(option)) {
 			
 			ArrayList<Payment> userPayments = payments.getUserPayments(users.getCurrentUser().getUsername());
 			
 			System.out.println("\nThese are the currently pending offers\n");
 			for (Payment payment : userPayments) {
-				System.out.println(payment + "\n");
+				System.out.println(payment.getRemainingPayments() + "\n");
 			}
 			
 		} else if ("offers".equals(option)) {
 			
 			ArrayList<Offer> pendingOffers = offers.getPendingOffers();
 			
-			System.out.println("\nThese are the currently pending offers\n");
+			System.out.println("\nThese are the payments for all users\n");
 			for (Offer offer: pendingOffers) {
 				System.out.println(offer + "\n");
 			}
@@ -229,7 +246,7 @@ public class CarLotDriver {
 			
 			System.out.println("\nThese are the currently pending offers\n");
 			for (Payment payment : allPayments) {
-				System.out.println(payment + "\n");
+				System.out.println(payment.getUsername() + " has " + payment.getRemainingPayments() + "\n");
 			}
 			
 		} else if ("register".equals(option)) {

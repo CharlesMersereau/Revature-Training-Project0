@@ -22,7 +22,6 @@ public class OfferService implements Serializable {
 			offers.add(offer);
 			logger.info("an offer has been made with id " + offer.getId());
 		} else {
-			logger.debug("user tried to make another offer on the same car");
 			System.out.println("A second offer cannot be made on the same car. If you'd like to make a new offer, please cancel the old offer first.\n");
 		}
 		
@@ -42,7 +41,7 @@ public class OfferService implements Serializable {
 				return false;
 			} else {
 				offer.setStatus("Accepted");
-				logger.info("an offer has been accepted: " + offerId);
+				logger.info("An offer has been accepted of id: " + offerId);
 				
 				for(int j = 0; j < offers.size(); j++) {
 					if (offers.get(j).getCarId().equals(offer.getCarId())) {
@@ -69,6 +68,7 @@ public class OfferService implements Serializable {
 		}
 		if (!offer.getStatus().equals("Accepted")) {
 			offer.setStatus("Rejected");
+			logger.info("An offer has been rejected of id: " + offerId);
 			return true;
 		} else {
 			System.out.println("You can not reject an offer that has been accepted: " + offerId + "\n");
@@ -80,7 +80,9 @@ public class OfferService implements Serializable {
 		int i = findOffer(offerId);
 		
 		if ( i > -1 ) {
+			Offer temp = offers.get(i);
 			offers.remove(i);
+			logger.info("An offer has been cancelled on car " + temp.getCarId());
 			return true;
 		} else {
 			System.out.println("Offer with that ID can not be found: " + offerId + "\n");

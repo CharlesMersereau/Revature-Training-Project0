@@ -17,6 +17,15 @@ public class PaymentService implements Serializable {
 		payments.add(payment);
 	}
 	
+	public Payment getPayment(String carId) {
+		for (Payment payment : payments) {
+			if (payment.getCarId() == carId) {
+				return payment;
+			}
+		}
+		return null;
+	}
+	
 	public ArrayList<Payment> getUserPayments(String username) {
 		
 		ArrayList<Payment> userPayments = new ArrayList<Payment>();

@@ -2,11 +2,15 @@ package com.revature.pojo;
 
 import java.io.Serializable;
 
+import com.revature.util.LoggerUtil;
+
 public class Payment implements Serializable {
 	
+	private transient LoggerUtil logger = new LoggerUtil();
 	private String username;
 	private String carId;
 	private int amount;
+	private int paymentsRemaining = 36;
 	
 	public Payment() {}
 
@@ -43,6 +47,18 @@ public class Payment implements Serializable {
 	
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+	
+	public int makePayment(int paymentAmount) {
+		this.amount -= paymentAmount;
+		this.paymentsRemaining--;
+		logger.info("Payment made by " + username + " in the amount of " + paymentAmount + " for " + carId);
+		return this.paymentsRemaining;
+	}
+	
+	public String getRemainingPayments() {
+		String remaining = "" + this.paymentsRemaining + " remaining payments of " + String.format("$%,.2f", ((double)this.amount)/((double)this.paymentsRemaining)) + " for " + carId;
+		return remaining;
 	}
 	
 }

@@ -18,7 +18,7 @@ public class Lot implements Serializable {
 	public void addCar(Car car) {
 		car.setId(this.createCarId(car));
 		cars.add(car);
-		logger.info("Car added to lot: " + car);
+		logger.info("Car added to lot of id: " + car);
 	}
 	
 	public String createCarId(Car car) {
@@ -45,7 +45,7 @@ public class Lot implements Serializable {
 	
 	public void removeCar(Car car) {
 		cars.remove(car);
-		logger.info("Car removed from lot: " + car);
+		logger.info("Car removed from lot of id: " + car);
 	}
 	
 	public Car removeCar(String id) {

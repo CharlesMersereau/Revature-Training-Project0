@@ -23,6 +23,7 @@ public class UserService implements Serializable {
 		if (i > -1) {
 			if (user.getPassword().equals(users.get(i).getPassword())) {
 				currentUser = users.get(i);
+				logger.info("System logged into by: " + currentUser.getUsername());
 				return currentUser;
 			} else {
 				System.out.println("You have entered the incorrect password for this account.");
@@ -62,6 +63,7 @@ public class UserService implements Serializable {
 	}
 
 	public void logoutUser() {
+		logger.info("System logged out of by: " + currentUser.getUsername());
 		currentUser = null;
 	}
 	
@@ -78,7 +80,6 @@ public class UserService implements Serializable {
 		} else {
 			
 			System.out.println("Sorry, but this username has already been taken.");
-			logger.debug("attempted to register a user using a username already in use: " + user.getUsername());
 			return false;
 			
 		}

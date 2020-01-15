@@ -1,499 +1,68 @@
-2020-01-14 10:06:40 INFO  root:25 - added new employee: chuck
-2020-01-14 10:11:12 DEBUG root:21 - attempted to register a user using a username already in use: bigben
-2020-01-14 10:47:46 INFO  root:25 - Car added to lot: ID: FE0, 2000 FORD EXPEDITION with 209,000 miles
-2020-01-14 10:48:02 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15,000 miles
-2020-01-14 10:49:02 INFO  root:25 - an offer has been made with id null
-2020-01-14 10:49:18 DEBUG root:21 - user tried to make another offer on the same car
-2020-01-14 10:53:34 INFO  root:25 - Car added to lot: ID: FM2, 1978 FORD MUSTANG with 95000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: TT0, 2011 TOYOTA TUNDRA with 123,000 miles
-2020-01-14 11:08:52 INFO  root:25 - Car added to lot: ID: FF1, 2014 FORD FUSION with 76,000 miles
-2020-01-14 11:10:02 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:10:02 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:15:09 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:15:09 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:15:09 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:15:42 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:15:42 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:15:42 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:15:55 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:15:55 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:15:55 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:17:21 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:17:21 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:17:21 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:18:55 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:18:55 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:18:55 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:20:15 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:20:15 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:20:15 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:20:44 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:20:44 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:20:44 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:21:26 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:21:26 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:21:26 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:22:01 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:22:01 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:22:01 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:22:59 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:22:59 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:22:59 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:23:29 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:23:29 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:23:29 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:23:37 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:23:37 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:23:37 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:24:26 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:24:26 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:24:26 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:24:52 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:24:52 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:24:52 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:25:15 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:25:15 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:25:15 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:26:02 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:26:02 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:26:02 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:27:35 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:27:35 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:27:35 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:27:54 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:27:54 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:27:54 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:28:55 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:28:55 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:28:55 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:29:02 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:29:02 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:29:02 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:30:04 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:30:04 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:30:04 INFO  root:25 - an offer has been made with id null
-2020-01-14 11:30:22 INFO  root:25 - an offer has been made with id MFF11
-2020-01-14 11:30:22 INFO  root:25 - an offer has been made with id BTT01
-2020-01-14 11:30:22 INFO  root:25 - an offer has been made with id SFM341
-2020-01-14 11:31:45 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:31:45 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:31:45 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:31:45 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:32:34 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:32:34 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:32:34 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:32:34 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:33:30 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:33:30 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:33:30 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:33:30 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:34:56 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:34:56 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:34:56 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:34:56 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:34:56 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:34:56 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:34:56 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:37:19 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:37:19 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:37:19 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:37:19 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:37:19 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:37:19 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:37:19 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:37:25 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:37:25 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:37:25 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:37:25 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:37:25 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:37:25 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:37:25 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:39:29 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:39:29 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:39:29 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:39:29 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:39:29 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:39:29 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:39:29 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:40:19 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:40:19 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:40:19 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:40:19 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:40:19 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:40:19 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:40:19 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:41:15 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:41:15 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:41:15 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:41:15 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:41:15 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:41:15 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:41:15 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:45:10 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:45:10 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:45:10 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:45:10 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:45:10 WARN  root:17 - you cannot reject an offer once it has been accepted: SFM340
-2020-01-14 11:45:10 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:45:10 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:45:10 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:45:10 WARN  root:17 - you cannot reject an offer once it has been accepted: SFM340
-2020-01-14 11:45:22 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:45:22 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:45:22 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:45:22 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:45:22 WARN  root:17 - you cannot reject an offer once it has been accepted: SFM340
-2020-01-14 11:45:22 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:45:22 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:45:22 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:45:22 WARN  root:17 - you cannot reject an offer once it has been accepted: SFM340
-2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:54:24 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:54:24 WARN  root:17 - Attempt to reject an accepted offer: SFM340
-2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:54:24 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:54:24 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:54:24 WARN  root:17 - Attempt to reject an accepted offer: SFM340
-2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:54:31 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:54:31 WARN  root:17 - Attempt to reject an accepted offer: SFM340
-2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:54:31 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:54:31 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:54:31 WARN  root:17 - Attempt to reject an accepted offer: SFM340
-2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:55:05 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:55:05 WARN  root:17 - Attempt to reject an accepted offer: SFM340
-2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:55:05 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:55:05 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:55:05 WARN  root:17 - Attempt to reject an accepted offer: SFM340
-2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:56:17 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:56:17 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:56:17 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:58:45 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:58:45 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:58:45 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:59:35 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 11:59:35 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 11:59:35 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:00:47 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:00:47 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:00:47 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:01:14 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:01:14 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:01:14 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:02:59 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:02:59 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:02:59 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:03:15 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:03:15 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:03:15 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:04:28 WARN  root:17 - Attempt to accept a rejected offer SFM340
-2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:04:28 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:04:28 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:04:28 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:04:40 WARN  root:17 - Attempt to accept a rejected offer SFM340
-2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:04:40 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:04:40 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:04:40 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:05:46 WARN  root:17 - Attempt to accept a rejected offer SFM340
-2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:05:46 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:05:46 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:05:46 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id GTT1000
-2020-01-14 12:07:15 INFO  root:25 - an offer has been accepted: GTT1000
-2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:07:15 WARN  root:17 - Attempt to accept a rejected offer SFM340
-2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:07:15 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:07:15 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:07:15 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id GTT1000
-2020-01-14 12:09:43 INFO  root:25 - an offer has been accepted: GTT1000
-2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:09:43 WARN  root:17 - Attempt to accept a rejected offer SFM340
-2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:09:43 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:09:43 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:09:43 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id GTT1000
-2020-01-14 12:11:19 INFO  root:25 - an offer has been accepted: GTT1000
-2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:11:19 WARN  root:17 - Attempt to accept a rejected offer SFM340
-2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:11:19 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:11:19 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:11:19 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id SFF130
-2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id GTT1000
-2020-01-14 12:17:42 INFO  root:25 - an offer has been accepted: GTT1000
-2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:17:42 WARN  root:17 - Attempt to accept a rejected offer SFM340
-2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:17:42 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:17:42 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:17:42 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id SFF130
-2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id GTT1000
-2020-01-14 12:18:12 INFO  root:25 - an offer has been accepted: GTT1000
-2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:18:12 WARN  root:17 - Attempt to accept a rejected offer SFM340
-2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:18:12 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 12:18:12 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 12:18:12 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 12:36:23 INFO  root:25 - added new employee: chuck
-2020-01-14 12:36:48 INFO  root:25 - Car added to lot: ID: FM0, 1978 FORD MUSTANG with 95000 miles
-2020-01-14 12:37:03 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
-2020-01-14 12:37:25 INFO  root:25 - added new user: bigben
-2020-01-14 12:37:52 INFO  root:25 - an offer has been made with id BFM00
-2020-01-14 12:39:04 INFO  root:25 - an offer has been accepted: BFM00
-2020-01-14 12:39:04 INFO  root:25 - Car removed from lot: ID: FM0, 1978 FORD MUSTANG with 95000 miles
-2020-01-14 12:43:55 INFO  root:25 - added new employee: chuck
-2020-01-14 12:46:08 INFO  root:25 - added new employee: chuck
-2020-01-14 12:46:08 INFO  root:25 - added new user: bigben
-2020-01-14 12:46:08 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 12:46:08 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 12:49:03 INFO  root:25 - an offer has been made with id BFM00
-2020-01-14 12:49:22 INFO  root:25 - an offer has been accepted: BFM00
-2020-01-14 12:49:22 INFO  root:25 - Car removed from lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 12:53:44 INFO  root:25 - added new employee: chuck
-2020-01-14 12:53:44 INFO  root:25 - added new user: bigben
-2020-01-14 12:53:44 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 12:53:44 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 12:54:02 INFO  root:25 - an offer has been made with id BFM00
-2020-01-14 12:54:22 INFO  root:25 - an offer has been accepted: BFM00
-2020-01-14 12:54:22 INFO  root:25 - Car removed from lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 13:06:46 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 13:13:05 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 13:13:59 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 13:17:08 INFO  root:25 - an offer has been accepted: BNR10
-2020-01-14 13:17:08 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 13:37:29 INFO  root:25 - added new employee: chuck
-2020-01-14 13:37:29 INFO  root:25 - added new user: bigben
-2020-01-14 13:37:29 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 13:37:29 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 13:37:29 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 13:41:36 INFO  root:25 - added new employee: chuck
-2020-01-14 13:41:36 INFO  root:25 - added new user: bigben
-2020-01-14 13:41:36 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 13:41:36 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 13:41:36 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 13:42:37 INFO  root:25 - added new employee: chuck
-2020-01-14 13:42:37 INFO  root:25 - added new user: bigben
-2020-01-14 13:42:37 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 13:42:37 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 13:42:37 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 13:42:45 DEBUG root:21 - attempted to register a user using a username already in use: chuck
-2020-01-14 13:42:55 DEBUG root:21 - attempted to register a user using a username already in use: chuck
-2020-01-14 15:03:27 INFO  root:25 - added new employee: chuck
-2020-01-14 15:03:27 INFO  root:25 - added new user: bigben
-2020-01-14 15:03:27 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:03:27 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 15:03:27 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 15:03:50 INFO  root:25 - an offer has been made with id BFM01
-2020-01-14 15:04:02 DEBUG root:21 - user tried to make another offer on the same car
-2020-01-14 15:05:06 INFO  root:25 - added new employee: chuck
-2020-01-14 15:05:06 INFO  root:25 - added new user: bigben
-2020-01-14 15:05:06 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:05:06 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 15:05:06 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 15:05:23 INFO  root:25 - an offer has been made with id BFM01
-2020-01-14 15:05:38 DEBUG root:21 - user tried to make another offer on the same car
-2020-01-14 15:06:59 INFO  root:25 - an offer has been accepted: BFM01
-2020-01-14 15:06:59 INFO  root:25 - Car removed from lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:08:46 INFO  root:25 - added new employee: chuck
-2020-01-14 15:08:46 INFO  root:25 - added new user: bigben
-2020-01-14 15:08:46 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:08:46 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 15:08:46 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 15:11:13 INFO  root:25 - added new employee: chuck
-2020-01-14 15:11:13 INFO  root:25 - added new user: bigben
-2020-01-14 15:11:13 INFO  root:25 - added new user: sheed
-2020-01-14 15:11:13 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:11:13 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 15:11:13 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 15:11:13 INFO  root:25 - an offer has been made with id SNR11
-2020-01-14 15:11:13 INFO  root:25 - an offer has been made with id SFM02
-2020-01-14 15:11:56 INFO  root:25 - an offer has been accepted: SNR11
-2020-01-14 15:11:56 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGE with 15000 miles
-2020-01-14 15:20:58 INFO  root:25 - added new employee: chuck
-2020-01-14 15:20:58 INFO  root:25 - added new user: bigben
-2020-01-14 15:20:58 INFO  root:25 - added new user: sheed
-2020-01-14 15:20:58 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:20:58 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
-2020-01-14 15:20:58 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 15:20:58 INFO  root:25 - an offer has been made with id SNR11
-2020-01-14 15:20:58 INFO  root:25 - an offer has been made with id SFM02
-2020-01-14 15:21:20 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
-2020-01-14 15:38:09 INFO  root:25 - added new employee: chuck
-2020-01-14 15:38:09 INFO  root:25 - added new user: bigben
-2020-01-14 15:38:09 INFO  root:25 - added new user: sheed
-2020-01-14 15:38:09 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:38:09 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
-2020-01-14 15:38:09 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 15:38:09 INFO  root:25 - an offer has been made with id SNR11
-2020-01-14 15:38:09 INFO  root:25 - an offer has been made with id SFM02
-2020-01-14 15:38:56 INFO  root:25 - added new employee: chuck
-2020-01-14 15:38:56 INFO  root:25 - added new user: bigben
-2020-01-14 15:38:56 INFO  root:25 - added new user: sheed
-2020-01-14 15:38:56 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:38:56 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
-2020-01-14 15:38:56 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 15:38:56 INFO  root:25 - an offer has been made with id SNR11
-2020-01-14 15:38:56 INFO  root:25 - an offer has been made with id SFM02
-2020-01-14 15:41:01 INFO  root:25 - added new employee: chuck
-2020-01-14 15:41:01 INFO  root:25 - added new user: bigben
-2020-01-14 15:41:01 INFO  root:25 - added new user: sheed
-2020-01-14 15:41:01 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:41:01 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
-2020-01-14 15:41:01 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 15:41:01 INFO  root:25 - an offer has been made with id SNR11
-2020-01-14 15:41:01 INFO  root:25 - an offer has been made with id SFM02
-2020-01-14 15:49:36 INFO  root:25 - added new employee: chuck
-2020-01-14 15:49:36 INFO  root:25 - added new user: bigben
-2020-01-14 15:49:36 INFO  root:25 - added new user: sheed
-2020-01-14 15:49:36 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:49:36 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
-2020-01-14 15:49:36 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 15:49:36 INFO  root:25 - an offer has been made with id SNR11
-2020-01-14 15:49:36 INFO  root:25 - an offer has been made with id SFM02
-2020-01-14 15:51:56 INFO  root:25 - added new employee: chuck
-2020-01-14 15:51:56 INFO  root:25 - added new user: bigben
-2020-01-14 15:51:56 INFO  root:25 - added new user: sheed
-2020-01-14 15:51:56 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
-2020-01-14 15:51:56 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
-2020-01-14 15:51:56 INFO  root:25 - an offer has been made with id BNR10
-2020-01-14 15:51:56 INFO  root:25 - an offer has been made with id SNR11
-2020-01-14 15:51:56 INFO  root:25 - an offer has been made with id SFM02
-2020-01-14 15:52:57 INFO  root:25 - Car added to lot: ID: FE2, 2000 FORD EXPEDITION with 209000 miles
-2020-01-14 15:53:24 INFO  root:25 - Car added to lot: ID: CC3, 2003 CHEVY CAMARO with 250000 miles
-2020-01-14 15:53:49 INFO  root:25 - Car removed from lot: ID: CC3, 2003 CHEVY CAMARO with 250000 miles
-2020-01-14 15:54:18 INFO  root:25 - an offer has been accepted: SNR11
-2020-01-14 15:54:18 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
-2020-01-14 15:55:30 INFO  root:25 - an offer has been made with id SFE23
-2020-01-14 16:01:55 INFO  root:25 - an offer has been accepted: SFE23
-2020-01-14 16:01:55 INFO  root:25 - Car removed from lot: ID: FE2, 2000 FORD EXPEDITION with 209000 miles
-2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id MFF10
-2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id SFF130
-2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id BTT00
-2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id GTT1000
-2020-01-14 16:17:48 INFO  root:25 - an offer has been accepted: GTT1000
-2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 16:17:48 WARN  root:17 - Attempt to accept a rejected offer SFM340
-2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 16:17:48 INFO  root:25 - an offer has been accepted: SFM340
-2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id SFM340
-2020-01-14 16:17:48 INFO  root:25 - an offer has been made with id BFM341
-2020-01-14 16:17:48 INFO  root:25 - an offer has been accepted: SFM340
+2020-01-14 21:19:33 INFO  root:25 - added new employee: chuck
+2020-01-14 21:19:33 INFO  root:25 - added new user: bigben
+2020-01-14 21:19:33 INFO  root:25 - added new user: sheed
+2020-01-14 21:19:33 INFO  root:25 - Car added to lot: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 21:19:33 INFO  root:25 - Car added to lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 21:19:33 INFO  root:25 - Car added to lot: ID: CC2, 2015 CHEVY CAMARO with 28000 miles
+2020-01-14 21:19:33 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 21:19:33 INFO  root:25 - an offer has been made with id SNR11
+2020-01-14 21:19:33 INFO  root:25 - an offer has been made with id SFM02
+2020-01-14 21:21:30 INFO  root:25 - an offer has been accepted: SNR11
+2020-01-14 21:21:30 INFO  root:25 - Car removed from lot: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 21:32:49 INFO  root:25 - Car added to lot: ID: NK3, 2017 NISSAN KICK with 12000 miles
+2020-01-14 21:33:19 INFO  root:25 - Car added to lot: ID: FF4, 2003 FORD F150 with 245917 miles
+2020-01-14 21:34:12 INFO  root:25 - Car added to lot: ID: HC5, 2003 HONDA CIVIC with 232000 miles
+2020-01-14 21:34:32 INFO  root:25 - Car added to lot: ID: OA6, 2001 OLDSMOBILE ALERO with 154321 miles
+2020-01-14 21:37:08 INFO  root:25 - Car added to lot: ID: SS7, 1999 SATURN SL with 195341 miles
+2020-01-14 21:38:29 INFO  root:25 - Car added to lot: ID: FT8, 1997 FORD TAURUS with 99000 miles
+2020-01-14 21:39:04 INFO  root:25 - Car added to lot: ID: PG9, 2002 PONTIAC GRAND AM with 210000 miles
+2020-01-14 21:40:01 INFO  root:25 - Car added to lot: ID: HC10, 2003 HONDA CIVIC with 123000 miles
+2020-01-14 21:41:10 INFO  root:25 - Car added to lot: ID: HC3, 2003 HONDA CIVIC with 194000 miles
+2020-01-14 21:41:24 INFO  root:25 - Car added to lot: ID: SS4, 1999 SATURN SL with 230000 miles
+2020-01-14 21:41:48 INFO  root:25 - Car added to lot: ID: OA5, 2003 OLDSMOBILE ALERO with 165000 miles
+2020-01-14 21:42:12 INFO  root:25 - Car added to lot: ID: PG6, 210000 PONTIAC GRAND AM with 210000 miles
+2020-01-14 21:42:29 INFO  root:25 - Car removed from lot: ID: PG6, 210000 PONTIAC GRAND AM with 210000 miles
+2020-01-14 21:42:59 INFO  root:25 - Car added to lot: ID: PG7, 2002 PONTIAC GRAND AM with 210000 miles
+2020-01-14 21:43:15 INFO  root:25 - Car added to lot: ID: FT8, 1997 FORD TAURUS with 65000 miles
+2020-01-14 21:43:44 INFO  root:25 - Car added to lot: ID: HC9, 2003 HONDA CIVIC with 189765 miles
+2020-01-14 21:43:59 INFO  root:25 - Car added to lot: ID: HC10, 2010 HONDA CIVIC with 78000 miles
+2020-01-14 21:47:33 INFO  root:25 - added new user: MrBigShot
+2020-01-14 21:48:07 INFO  root:25 - added new user: ripHamilton
+2020-01-14 21:48:43 INFO  root:25 - added new user: tayshaun
+2020-01-14 22:34:01 INFO  root:25 - System booted up
+2020-01-14 22:34:16 INFO  root:25 - System logged into by: chuck
+2020-01-14 22:35:59 INFO  root:25 - added new employee: chuck
+2020-01-14 22:35:59 INFO  root:25 - added new user: bigben
+2020-01-14 22:35:59 INFO  root:25 - added new user: sheed
+2020-01-14 22:35:59 INFO  root:25 - Car added to lot of id: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 22:35:59 INFO  root:25 - Car added to lot of id: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 22:35:59 INFO  root:25 - Car added to lot of id: ID: CC2, 2015 CHEVY CAMARO with 28000 miles
+2020-01-14 22:35:59 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 22:35:59 INFO  root:25 - an offer has been made with id SNR11
+2020-01-14 22:35:59 INFO  root:25 - an offer has been made with id SFM02
+2020-01-14 22:36:15 INFO  root:25 - System logged into by: chuck
+2020-01-14 22:36:26 INFO  root:25 - Car added to lot of id: ID: HC3, 2003 HONDA CIVIC with 197000 miles
+2020-01-14 22:36:48 INFO  root:25 - Car added to lot of id: ID: OA4, 2002 OLDSMOBILE ALERO with 185000 miles
+2020-01-14 22:37:04 INFO  root:25 - Car added to lot of id: ID: SS5, 1999 SATURN SL with 230000 miles
+2020-01-14 22:37:26 INFO  root:25 - Car added to lot of id: ID: PG6, 2001 PONTIAC GRAND AM with 210000 miles
+2020-01-14 22:37:43 INFO  root:25 - Car added to lot of id: ID: HC7, 2003 HONDA CIVIC with 65000 miles
+2020-01-14 22:37:57 INFO  root:25 - Car added to lot of id: ID: HC8, 2010 HONDA CIVIC with 45000 miles
+2020-01-14 22:40:15 INFO  root:25 - added new employee: chuck
+2020-01-14 22:40:15 INFO  root:25 - added new user: bigben
+2020-01-14 22:40:15 INFO  root:25 - added new user: sheed
+2020-01-14 22:40:15 INFO  root:25 - Car added to lot of id: ID: FM0, 1975 FORD MUSTANG with 65000 miles
+2020-01-14 22:40:15 INFO  root:25 - Car added to lot of id: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 22:40:15 INFO  root:25 - Car added to lot of id: ID: CC2, 2015 CHEVY CAMARO with 28000 miles
+2020-01-14 22:40:15 INFO  root:25 - an offer has been made with id BNR10
+2020-01-14 22:40:15 INFO  root:25 - an offer has been made with id SNR11
+2020-01-14 22:40:15 INFO  root:25 - an offer has been made with id SFM02
+2020-01-14 22:40:57 INFO  root:25 - System booted up
+2020-01-14 22:41:07 INFO  root:25 - System logged into by: chuck
+2020-01-14 22:42:21 INFO  root:25 - System booted up
+2020-01-14 22:42:27 INFO  root:25 - System logged into by: chuck
+2020-01-14 22:42:40 INFO  root:25 - System logged out of by: chuck
+2020-01-14 22:42:50 INFO  root:25 - System logged into by: bigben
+2020-01-14 22:43:09 INFO  root:25 - System logged out of by: bigben
+2020-01-14 22:43:20 INFO  root:25 - System booted up
+2020-01-14 22:43:43 INFO  root:25 - System logged into by: chuck
+2020-01-14 22:44:20 INFO  root:25 - Car added to lot of id: ID: FM9, 1963 FORD MUSTANG with 143000 miles
