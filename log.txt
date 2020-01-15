@@ -66,3 +66,23 @@
 2020-01-14 22:43:20 INFO  root:25 - System booted up
 2020-01-14 22:43:43 INFO  root:25 - System logged into by: chuck
 2020-01-14 22:44:20 INFO  root:25 - Car added to lot of id: ID: FM9, 1963 FORD MUSTANG with 143000 miles
+2020-01-14 22:57:10 INFO  root:25 - System booted up
+2020-01-14 22:57:17 INFO  root:25 - System logged into by: chuck
+2020-01-14 22:57:29 INFO  root:25 - An offer has been accepted of id: SNR11
+2020-01-14 22:57:29 INFO  root:25 - An offer has been rejected of id: BNR10
+2020-01-14 22:57:29 INFO  root:25 - Car removed from lot of id: ID: NR1, 2019 NISSAN ROGUE with 15000 miles
+2020-01-14 22:58:35 INFO  root:25 - System logged out of by: chuck
+2020-01-14 22:58:41 INFO  root:25 - System logged into by: sheed
+2020-01-14 22:58:59 INFO  root:25 - System logged out of by: sheed
+2020-01-14 22:59:26 INFO  root:25 - System booted up
+2020-01-14 22:59:32 INFO  root:25 - System logged into by: chuck
+2020-01-14 22:59:51 INFO  root:25 - System logged out of by: chuck
+2020-01-14 23:00:04 INFO  root:25 - System logged into by: bigben
+2020-01-14 23:01:16 INFO  root:25 - System booted up
+2020-01-14 23:01:24 INFO  root:25 - System logged into by: bigben
+2020-01-14 23:01:42 INFO  root:25 - an offer has been made with id BHC33
+2020-01-14 23:02:16 INFO  root:25 - an offer has been made with id BSS54
+2020-01-14 23:02:31 INFO  root:25 - System logged out of by: bigben
+2020-01-14 23:02:38 INFO  root:25 - System logged into by: sheed
+2020-01-14 23:03:03 INFO  root:25 - an offer has been made with id SHC35
+2020-01-14 23:03:59 INFO  root:25 - System logged out of by: sheed

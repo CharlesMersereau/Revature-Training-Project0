@@ -124,7 +124,7 @@ public class CarLotDriver {
 			
 			lot.addCar(new Car(make, model, year, mileage));
 			
-		} else if ("cancel".equals(option)) {
+		} else if ("cancel offer".equals(option)) {
 			
 			System.out.println("\nEnter the ID of the offer you'd like to cancel");
 			System.out.println("ID: ");
@@ -169,7 +169,7 @@ public class CarLotDriver {
 				System.out.println(car + "\n");
 			}
 			
-		} else if ("make".equals(option)) {
+		} else if ("make offer".equals(option)) {
 			
 			System.out.println("\nEnter the car ID and the amount of the offer");
 			System.out.println("Car ID: ");
