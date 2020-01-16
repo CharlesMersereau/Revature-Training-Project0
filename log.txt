@@ -125,3 +125,21 @@
 2020-01-15 09:40:07 INFO  root:25 - Payment made by sheed in the amount of 263.89 for FM0
 2020-01-15 09:40:28 INFO  root:25 - Payment made by sheed in the amount of 500.0 for FM0
 2020-01-15 09:40:59 INFO  root:25 - System booted up
+2020-01-15 11:32:10 INFO  root:25 - System booted up
+2020-01-15 11:32:17 INFO  root:25 - System logged into by: chuck
+2020-01-15 11:33:55 INFO  root:25 - System booted up
+2020-01-15 11:34:03 INFO  root:25 - System logged into by: chuck
+2020-01-15 11:38:57 INFO  root:25 - System booted up
+2020-01-15 11:39:20 INFO  root:25 - added new user: MrBigShot
+2020-01-15 11:39:43 INFO  root:25 - System logged into by: chuck
+2020-01-15 11:40:47 INFO  root:25 - System logged out of by: chuck
+2020-01-15 11:40:54 INFO  root:25 - System logged into by: MrBigShot
+2020-01-15 11:41:12 INFO  root:25 - an offer has been made with id MSS56
+2020-01-15 11:43:30 INFO  root:25 - an offer has been made with id MOA47
+2020-01-16 13:23:58 INFO  root:25 - System booted up
+2020-01-16 13:24:06 INFO  root:25 - System logged into by: chuck
+2020-01-16 13:26:21 INFO  root:25 - Car added to lot of id: ID: TM10,  TESLA MODEL 3 with  miles
+2020-01-16 16:19:49 INFO  root:25 - Car added to lot of id: ID: FM11,  FORD MUSTANG with  miles
+2020-01-16 16:23:49 INFO  root:25 - System logged out of by: chuck
+2020-01-16 16:23:56 INFO  root:25 - System logged into by: sheed
+2020-01-16 16:26:03 INFO  root:25 - Payment made by sheed in the amount of 400.0 for FM0

@@ -26,10 +26,10 @@ public class UserService implements Serializable {
 				logger.info("System logged into by: " + currentUser.getUsername());
 				return currentUser;
 			} else {
-				System.out.println("You have entered the incorrect password for this account.");
+				System.out.println("\nYou have entered the incorrect password for this account.");
 			}
 		} else {
-			System.out.println("We were unable to locate an account with that username: " + user.getUsername());
+			System.out.println("\nWe were unable to locate an account with that username: " + user.getUsername());
 		}
 		
 		return null;
@@ -59,7 +59,7 @@ public class UserService implements Serializable {
 	
 	public void addEmployee(String username, String password) {
 		users.add(new Employee(username,password));
-		logger.info("added new employee: " + username);
+		logger.info("Added new employee: " + username);
 	}
 
 	public void logoutUser() {
@@ -74,12 +74,12 @@ public class UserService implements Serializable {
 			
 			User customer = new Customer(user.getUsername(), user.getPassword());
 			users.add(customer);
-			logger.info("added new user: " + customer.getUsername());
+			logger.info("Added new user: " + customer.getUsername());
 			return true;
 			
 		} else {
 			
-			System.out.println("Sorry, but this username has already been taken.");
+			System.out.println("\nSorry, but this username has already been taken.".toUpperCase());
 			return false;
 			
 		}

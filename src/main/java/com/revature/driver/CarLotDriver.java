@@ -85,7 +85,7 @@ public class CarLotDriver {
 			System.out.println("'logout' to log out of this account.");
 		}
 		
-		System.out.println("'exit' to exit the car lot tool.");
+		System.out.print("'exit' to exit the car lot tool.\n\nOption: ");
 		
 	}
 	
@@ -95,7 +95,7 @@ public class CarLotDriver {
 		if ("accept".equals(option)) {
 			
 			System.out.println("\nEnter the ID of the offer you'd like to accept");
-			System.out.println("ID: ");
+			System.out.print("ID: ");
 			String offerId = scan.nextLine();
 			boolean accepted = offers.acceptOffer(offerId);
 			
@@ -110,16 +110,16 @@ public class CarLotDriver {
 		} else if ("add".equals(option)) {
 			
 			System.out.println("\nEnter the information for the car you want to add");
-			System.out.println("Make: ");
+			System.out.print("Make: ");
 			String make = scan.nextLine();
 			
-			System.out.println("Model: ");
+			System.out.print("Model: ");
 			String model = scan.nextLine();
 			
-			System.out.println("Year: ");
+			System.out.print("Year: ");
 			String year = scan.nextLine();
 			
-			System.out.println("Mileage: ");
+			System.out.print("Mileage: ");
 			String mileage = scan.nextLine();
 			
 			lot.addCar(new Car(make, model, year, mileage));
@@ -127,7 +127,7 @@ public class CarLotDriver {
 		} else if ("cancel offer".equals(option)) {
 			
 			System.out.println("\nEnter the ID of the offer you'd like to cancel");
-			System.out.println("ID: ");
+			System.out.print("ID: ");
 			offers.cancelOffer(scan.nextLine());
 						
 		} else if ("exit".equals(option)) {
@@ -147,6 +147,7 @@ public class CarLotDriver {
 			while(user == null) {
 				
 				System.out.println("\nEnter 'exit' to exit login, or anything else to retry.");
+				System.out.print("Option: ");
 				option = scan.nextLine();
 				
 				if("exit".equals(option)) {
@@ -172,12 +173,12 @@ public class CarLotDriver {
 		} else if ("make offer".equals(option)) {
 			
 			System.out.println("\nEnter the car ID and the amount of the offer");
-			System.out.println("Car ID: ");
+			System.out.print("Car ID: ");
 			String carId = scan.nextLine();
 			
 			if (lot.findCar(carId) > -1) {
 				
-				System.out.println("Amount: ");
+				System.out.print("Amount: ");
 				Integer amount = Integer.parseInt(scan.nextLine());
 				offers.makeOffer(new Offer(users.getCurrentUser().getUsername(),carId,amount));
 				
@@ -208,18 +209,29 @@ public class CarLotDriver {
 		} else if ("make payment".equals(option)) {
 			
 			System.out.println("\nLet's get some info for your payment");
-			System.out.println("ID of car to make a payment on: ");
+			System.out.print("ID of car to make a payment on: ");
 			String carId = scan.nextLine();
-			System.out.println("Amount of payment");
-			float amount = Float.parseFloat(scan.nextLine());
-			
-			Payment paymentToBeMadeOn = payments.getPayment(carId);
-			
-			if (paymentToBeMadeOn != null) {
-				paymentToBeMadeOn.makePayment(amount);
-			} else {
-				System.out.println("\nCannot find a payment for you mathcing that car ID");
+			System.out.print("Amount of payment: ");
+			Float amount = (float)0;
+					
+			try {
+				
+				amount = Float.parseFloat(scan.nextLine());
+				Payment paymentToBeMadeOn = payments.getPayment(carId);
+				
+				if (paymentToBeMadeOn != null) {
+					paymentToBeMadeOn.makePayment(amount);
+				} else {
+					System.out.println("\nCannot find a payment for you matching that car ID");
+				}
+				
+			} catch (NumberFormatException e) {
+				System.out.println("\nPAYMENT AMOUNTS MUST CONTAIN NUMBERS ONLY");;
 			}
+			
+			
+			
+			
 			
 			
 		} else if ("my payments".equals(option)) {
@@ -256,6 +268,7 @@ public class CarLotDriver {
 			
 			while(!users.registerUser(user)) {
 				System.out.println("\nEnter 'exit' to exit the register page, or anything else to retry.");
+				System.out.print("Option: ");
 				option = scan.nextLine();
 				if("exit".equals(option)) {
 					break;
@@ -267,13 +280,13 @@ public class CarLotDriver {
 		} else if ("reject".equals(option)) {
 			
 			System.out.println("\nEnter the ID of the offer you'd like to reject");
-			System.out.println("ID: ");
+			System.out.print("ID: ");
 			offers.rejectOffer(scan.nextLine());
 			
 		} else if ("remove".equals(option)) {
 			
 			System.out.println("\nPlease enter the ID of the car you'd like to remove");
-			System.out.println("ID: ");
+			System.out.print("ID: ");
 			String id = scan.nextLine();
 			
 			lot.removeCar(id);
@@ -290,10 +303,10 @@ public class CarLotDriver {
 		
 		User user = new User();
 		
-		System.out.println("Username: ");
+		System.out.print("Username: ");
 		user.setUsername(scan.nextLine());
 		
-		System.out.println("Password: ");
+		System.out.print("Password: ");
 		user.setPassword(scan.nextLine());
 		
 		return user;
