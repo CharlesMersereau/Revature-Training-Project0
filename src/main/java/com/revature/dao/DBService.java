@@ -12,9 +12,9 @@ import com.revature.users.User;
 
 public class DBService {
 	
-	private static final String URL = "jdbc:postgresql://db-cm-project0.c9sibusobh4e.us-east-2.rds.amazonaws.com:5432/postgres?";
-	private static final String USERNAME= "mersereau90";
-	private static final String PASSWORD="gochiefs34";
+	private static final String URL = "";
+	private static final String USERNAME= "";
+	private static final String PASSWORD="";
 	
 	public User login(String username, String password) {
 		
