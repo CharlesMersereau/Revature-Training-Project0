@@ -15,11 +15,11 @@ public class Employee extends User {
 	}
 	
 	private void setOptions() {
-		options.add("'add' to add a car to the lot");
-		options.add("'remove' to remove a car from the lot");
-		options.add("'offers' to view all pending offers");
 		options.add("'accept' to accept an offer");
-		options.add("'reject' to reject an offer");
+		options.add("'add' to add a car to the lot");
+		options.add("'offers' to view all pending offers");
 		options.add("'payments' to view all payments");
+		options.add("'reject' to reject an offer");
+		options.add("'remove' to remove a car from the lot");
 	}
 }

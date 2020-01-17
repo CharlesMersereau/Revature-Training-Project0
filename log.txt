@@ -143,3 +143,23 @@
 2020-01-16 16:23:49 INFO  root:25 - System logged out of by: chuck
 2020-01-16 16:23:56 INFO  root:25 - System logged into by: sheed
 2020-01-16 16:26:03 INFO  root:25 - Payment made by sheed in the amount of 400.0 for FM0
+2020-01-16 16:34:04 INFO  root:25 - System booted up
+2020-01-16 16:34:10 INFO  root:25 - System logged into by: sheed
+2020-01-16 16:35:02 INFO  root:25 - Payment made by sheed in the amount of 500.0 for FM0
+2020-01-16 22:57:11 INFO  root:25 - System booted up
+2020-01-16 22:57:27 INFO  root:25 - System logged into by: sheed
+2020-01-16 22:58:51 INFO  root:25 - Payment made by sheed in the amount of 400.0 for FM0
+2020-01-16 23:16:58 INFO  root:25 - System booted up
+2020-01-16 23:18:47 INFO  root:25 - System booted up
+2020-01-16 23:19:19 INFO  root:25 - System booted up
+2020-01-16 23:19:51 INFO  root:25 - System booted up
+2020-01-16 23:20:12 INFO  root:25 - System booted up
+2020-01-16 23:21:40 INFO  root:25 - System booted up
+2020-01-16 23:23:58 INFO  root:25 - System booted up
+2020-01-16 23:25:21 INFO  root:25 - System booted up
+2020-01-16 23:26:49 INFO  root:25 - System booted up
+2020-01-16 23:27:34 INFO  root:25 - System booted up
+2020-01-16 23:28:47 INFO  root:25 - System booted up
+2020-01-16 23:29:24 INFO  root:25 - System booted up
+2020-01-16 23:30:40 INFO  root:25 - System booted up
+2020-01-16 23:30:44 INFO  root:25 - System logged into by: chuck

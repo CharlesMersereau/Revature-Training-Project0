@@ -3,6 +3,7 @@ package com.revature.driver;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.revature.dao.DBService;
 import com.revature.dao.LotDAO;
 import com.revature.dao.LotDAOSerialization;
 import com.revature.dao.OfferServiceDAO;
@@ -57,6 +58,8 @@ public class CarLotDriver {
 		
 		
 		// for Prod
+		DBService db = new DBService();
+//		db.login("chuck", "pass");
 		users = usersDAO.readUserService();
 		lot = lotDAO.readLot();
 		offers = offersDAO.readOfferService();
