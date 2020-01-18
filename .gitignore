@@ -10,7 +10,7 @@
 # Log file
 
 
-*.log
+*/log.text
 
 
 
@@ -134,4 +134,4 @@ hs_err_pid*
 
 
 
-Week2/JDBCExample/src/main/resources/database.properties
+Project0/src/main/resources/database.properties
