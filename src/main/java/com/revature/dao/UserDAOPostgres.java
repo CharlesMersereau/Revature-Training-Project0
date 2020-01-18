@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,66 +15,11 @@ import com.revature.users.Customer;
 import com.revature.users.Employee;
 import com.revature.users.User;
 import com.revature.users.UserService;
+import com.revature.util.LoggerUtil;
 
 public class UserDAOPostgres implements UserDAO {
-
-	public void persistUserService(UserService userService) {
-
-		String filename = "UserServiceDatabase.dat";
-		
-		FileOutputStream fos = null;
-		ObjectOutputStream oos = null;
-
-		try {
-			fos = new FileOutputStream(filename);
-			oos = new ObjectOutputStream(fos);
-			oos.writeObject(userService);
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (oos != null) {
-				try {
-					oos.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-			if (fos != null) {
-				try {
-					fos.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		}	
-	}
-
-	public UserService readUserService() {
-		
-		String filename = "UserServiceDatabase.dat";
-
-		UserService users = null;
-		
-		FileInputStream fis = null;
-		ObjectInputStream ois = null;
-
-		try  {
-			fis = new FileInputStream(filename);
-			ois = new ObjectInputStream(fis);
-			users = (UserService) ois.readObject();
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-
-		return users;
-	}
+	
+	private static LoggerUtil logger = new LoggerUtil();
 
 	@Override
 	public User authenticate(User u) {
@@ -88,26 +32,29 @@ public class UserDAOPostgres implements UserDAO {
 			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql_get);
 			
-			rs.next();
-				
-	        String username = rs.getString("username");
-	        String firstName = rs.getString("first_name");
-	        String lastName = rs.getString("last_name");
-	        int userId = rs.getInt("user_id");
-	        int userRoleId = rs.getInt("user_role_id");
+			System.out.println(rs);
+			
+			if(rs.next()) {
+				String username = rs.getString("username");
+		        String firstName = rs.getString("first_name");
+		        String lastName = rs.getString("last_name");
+		        int userId = rs.getInt("user_id");
+		        int userRoleId = rs.getInt("user_role_id");
+		        
+		        if (userRoleId == 0) {
+		        	Customer customer = new Customer();
+		        	customer.setUsername(username);
+		        	return customer;
+		        } else if (userRoleId == 1) {
+		        	Employee employee = new Employee();
+		        	employee.setUsername(username);
+		        	return employee;
+		        }
+			}
 	        
-	        if (userRoleId == 1) {
-	        	Customer customer = new Customer();
-	        	customer.setUsername(username);
-	        	return customer;
-	        } else if (userRoleId == 2) {
-	        	Employee employee = new Employee();
-	        	employee.setUsername(username);
-	        	return employee;
-	        }
-		} catch (SQLException e1) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e.printStackTrace();
 		} finally {
 			try {
 				conn.close();
@@ -121,15 +68,33 @@ public class UserDAOPostgres implements UserDAO {
 	}
 
 	@Override
-	public void logout() {
-		// TODO Auto-generated method stub
+	public void registerCustomer(User u) throws SQLException {
+		String sql = "insert into users (username,user_password,first_name,last_name,user_role_id) values ('" + u.getUsername() + "','" + u.getPassword() + "','" + u.getFirstName() + "','" + u.getLastName() + "',0)";
+		Connection conn = ConnectionFactory.getConnection();
+		Statement stmt;
 		
-	}
-
-	@Override
-	public void registerUser(User user) {
-		// TODO Auto-generated method stub
-		
+		try {
+			stmt = conn.createStatement();
+			int rowsUpdated = stmt.executeUpdate(sql);
+			
+			System.out.println("rows updated: " + rowsUpdated);
+			
+	        if(rowsUpdated == 0) {
+	        	System.out.println("error registering user");
+	        }
+	        
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			throw e;
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				logger.warn(e.toString());
+			}
+		}
+        
 	}
 
 }

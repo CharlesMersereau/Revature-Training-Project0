@@ -1,6 +1,7 @@
 package com.revature.users;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.revature.dao.UserDAO;
@@ -13,16 +14,16 @@ public class UserService implements Serializable {
 	private transient LoggerUtil logger;
 	private ArrayList<User> users = new ArrayList<User>();
 	private transient User currentUser;
-	private transient UserDAO usersDAO;
+	private transient UserDAO userDAO;
 	
 	public UserService() {
 		logger = new LoggerUtil();
-		usersDAO = new UserDAOPostgres();
+		userDAO = new UserDAOPostgres();
 	}
 	
-	public User authenticateUser(User user) {
-		currentUser = usersDAO.authenticate(user);
-		return currentUser;
+	public User authenticateUser(User u) {
+		User user = userDAO.authenticate(u);
+		return user;
 	}
 	
 	public void displayOptions() {
@@ -33,23 +34,9 @@ public class UserService implements Serializable {
 			System.out.println(option);
 		}
 	};
-
-	public int findUser(String username) {
-		for (int i = 0; i < users.size(); i++) {
-			if (users.get(i).getUsername().equals(username)) {	
-				return i;
-			}
-		}
-		return -1;
-	}
 	
 	public User getCurrentUser() {
 		return currentUser;
-	}
-	
-	public void addEmployee(String username, String password) {
-		users.add(new Employee(username,password));
-		logger.info("Added new employee: " + username);
 	}
 
 	public void logoutUser() {
@@ -57,26 +44,20 @@ public class UserService implements Serializable {
 		currentUser = null;
 	}
 	
-	public boolean registerUser(User user) {
+	public void registerCustomer(Customer customer) throws SQLException {
 		
-		
-		if (this.findUser(user.getUsername()) == -1) {
-			
-			User customer = new Customer(user.getUsername(), user.getPassword());
-			users.add(customer);
+		try {
+			userDAO.registerCustomer(customer);
 			logger.info("Added new user: " + customer.getUsername());
-			return true;
 			
-		} else {
-			
-			System.out.println("\nSorry, but this username has already been taken.".toUpperCase());
-			return false;
-			
+		} catch (SQLException e) {
+			throw e;
 		}
 		
 	}
-
-	public void transferCarToUser(Car car, String username) {
-		((Customer)users.get(findUser(username))).addCar(car);
+	
+	public void setCurrentUser(User user) {
+		currentUser = user;
 	}
+
 }

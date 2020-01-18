@@ -1,5 +1,6 @@
 package com.revature.driver;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -40,23 +41,7 @@ public class CarLotDriver {
 	public static void main(String[] args) {
 		
 		String option = "";
-		
-		// for Dev
-//		users = new UserService();
-//		users.addEmployee("chuck", "pass");
-//		users.registerUser(new User("bigben","thefro"));
-//		users.registerUser(new User("sheed","thefro"));
-//		lot = new Lot();
-//		lot.addCar(new Car("ford","mustang","1975","65000"));
-//		lot.addCar(new Car("nissan","rogue","2019","15000"));
-//		lot.addCar(new Car("chevy","camaro","2015","28000"));
-//		offers = new OfferService();
-//		offers.makeOffer(new Offer("bigben","NR1",12500));
-//		offers.makeOffer(new Offer("sheed","NR1",15000));
-//		offers.makeOffer(new Offer("sheed","FM0",9500));
-//		payments = new PaymentService();
-		
-		
+	
 		// for Prod
 		lot = lotDAO.readLot();
 		offers = offersDAO.readOfferService();
@@ -104,7 +89,7 @@ public class CarLotDriver {
 				String username = offer.getUsername();
 				Car car = lot.removeCar(offer.getCarId());
 				payments.addPayment(new Payment(username,car.getId(),offer.getAmount()));
-				users.transferCarToUser(car,username);
+//				users.transferCarToUser(car,username);
 			}
 			
 		} else if ("add".equals(option)) {
@@ -140,23 +125,41 @@ public class CarLotDriver {
 			
 		} else if ("login".equals(option)) {
 			
-			System.out.println("\nEnter your credentials to log in");
-			User user = getUserInfo();
-			user = users.authenticateUser(user);
+			User user;
 			
-			while(user == null) {
+			do {
+				user = new User();
+				System.out.println("\nEnter your credentials to log in");
 				
-				System.out.println("\nEnter 'exit' to exit login, or anything else to retry.");
-				System.out.print("Option: ");
-				option = scan.nextLine();
+				System.out.print("Username: ");
+				user.setUsername(scan.nextLine());
 				
-				if("exit".equals(option)) {
-					break;
+				System.out.print("Password: ");
+				user.setPassword(scan.nextLine());
+				
+				user = users.authenticateUser(user);
+				
+				if (user == null) {
+					
+					System.out.println("\nINCORRECT USERNAME OR PASSWORD".toUpperCase());
+					
+					do {
+						System.out.println("\nWould you like to retry loggin in?");
+						System.out.println("[1] Yes");
+						System.out.println("[2] No");
+						System.out.print("\nOption: ");
+						option = scan.nextLine();
+						if (!("1".equals(option) || "2".equals(option))) {
+							System.out.println("\nINVALID OPTION".toUpperCase());
+						}
+					} while ( !("1".equals(option) || "2".equals(option)) ); 
+					
 				} else {
-					user = getUserInfo();
-					user = users.authenticateUser(user);
+					users.setCurrentUser(user);
+					logger.info("System logged into by: " + user.getFirstName() + " " + user.getLastName() + " [" + user.getUsername() + "]");
 				}
-			};
+				
+			} while ( user == null && "1".equals(option));
 			
 		} else if ("logout".equals(option)) {
 			
@@ -186,26 +189,6 @@ public class CarLotDriver {
 				System.out.println("\nSorry, but we could not locate a car with that ID.");
 			}
 						
-		} else if ("my cars".equals(option)) {
-			
-			ArrayList<Car> myCars = ((Customer)users.getCurrentUser()).getMyCars();
-			
-			System.out.println("\nHere are your cars:\n");
-			
-			for (Car car : myCars) {
-				System.out.println(car + "\n");
-			}
-			
-		} else if ("my offers".equals(option)) {
-			
-			ArrayList<Offer> myOffers = offers.getUserOffers(users.getCurrentUser().getUsername());
-
-			System.out.println("\nHere are your current offers:\n");
-			
-			for (Offer offer : myOffers) {
-				System.out.println(offer + "\n");
-			}
-			
 		} else if ("make payment".equals(option)) {
 			
 			System.out.println("\nLet's get some info for your payment");
@@ -226,13 +209,28 @@ public class CarLotDriver {
 				}
 				
 			} catch (NumberFormatException e) {
-				System.out.println("\nPAYMENT AMOUNTS MUST CONTAIN NUMBERS ONLY");;
+				System.out.println("\nPAYMENT AMOUNTS MUST CONTAIN NUMBERS ONLY".toUpperCase());;
 			}
 			
+		} else if ("my cars".equals(option)) {
 			
+			ArrayList<Car> myCars = ((Customer)users.getCurrentUser()).getMyCars();
 			
+			System.out.println("\nHere are your cars:\n");
 			
+			for (Car car : myCars) {
+				System.out.println(car + "\n");
+			}
 			
+		} else if ("my offers".equals(option)) {
+			
+			ArrayList<Offer> myOffers = offers.getUserOffers(users.getCurrentUser().getUsername());
+
+			System.out.println("\nHere are your current offers:\n");
+			
+			for (Offer offer : myOffers) {
+				System.out.println(offer + "\n");
+			}
 			
 		} else if ("my payments".equals(option)) {
 			
@@ -263,19 +261,46 @@ public class CarLotDriver {
 			
 		} else if ("register".equals(option)) {
 			
-			System.out.println("\nEnter a username and password to register.");
-			User user = getUserInfo();
-			
-			while(!users.registerUser(user)) {
-				System.out.println("\nEnter 'exit' to exit the register page, or anything else to retry.");
-				System.out.print("Option: ");
-				option = scan.nextLine();
-				if("exit".equals(option)) {
-					break;
-				} else {
-					user = getUserInfo();
+			Customer customer;
+			do {
+				try {
+					System.out.println("\nEnter a username and password to register.");
+					
+					customer = new Customer();
+					
+					System.out.print("Username: ");
+					customer.setUsername(scan.nextLine());
+					
+					System.out.print("Password: ");
+					customer.setPassword(scan.nextLine());
+					
+					System.out.print("First Name: ");
+					customer.setFirstName(scan.nextLine());
+					
+					System.out.print("Last Name: ");
+					customer.setLastName(scan.nextLine());
+					users.registerCustomer(customer);
+					
+				} catch (SQLException e) {
+
+					System.out.println("\nSorry, but this username has already been taken.".toUpperCase());
+					
+					do {
+						
+						System.out.println("\nWould you like to register using a different username?");
+						System.out.println("[1] Yes");
+						System.out.println("[2] No");
+						System.out.print("\nOption: ");
+						option = scan.nextLine();
+						
+						if (!("1".equals(option) || "2".equals(option))) {
+							System.out.println("\nINVALID OPTION".toUpperCase());
+						}
+						
+					} while (!("1".equals(option) || "2".equals(option)));
+					
 				}
-			};
+			} while ("1".equals(option));
 			
 		} else if ("reject".equals(option)) {
 			
@@ -299,16 +324,4 @@ public class CarLotDriver {
 		}
 	}
 	
-	private static User getUserInfo() {
-		
-		User user = new User();
-		
-		System.out.print("Username: ");
-		user.setUsername(scan.nextLine());
-		
-		System.out.print("Password: ");
-		user.setPassword(scan.nextLine());
-		
-		return user;
-	}
 }

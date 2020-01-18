@@ -38,7 +38,7 @@ public class ConnectionFactory {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println(url + " " + username + " "  + password);
+		
 	}
 	
 	public static Connection getConnection() {
