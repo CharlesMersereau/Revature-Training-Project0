@@ -3,15 +3,15 @@ package com.revature.driver;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.revature.dao.DBService;
+import com.revature.dao.ConnectionFactory;
 import com.revature.dao.LotDAO;
 import com.revature.dao.LotDAOSerialization;
 import com.revature.dao.OfferServiceDAO;
 import com.revature.dao.OfferServiceDAOSerialization;
 import com.revature.dao.PaymentServiceDAO;
 import com.revature.dao.PaymentServiceDAOSerialization;
-import com.revature.dao.UserServiceDAO;
-import com.revature.dao.UserServiceDAOSerialization;
+import com.revature.dao.UserDAO;
+import com.revature.dao.UserDAOPostgres;
 import com.revature.lot.Lot;
 import com.revature.offer.OfferService;
 import com.revature.payment.PaymentService;
@@ -27,8 +27,8 @@ public class CarLotDriver {
 	
 	private static LoggerUtil logger = new LoggerUtil();
 	private static Scanner scan = new Scanner(System.in);
-	private static UserServiceDAO usersDAO = new UserServiceDAOSerialization();
-	private static UserService users;
+	private static UserDAO usersDAO = new UserDAOPostgres();
+	private static UserService users = new UserService();
 	private static LotDAO lotDAO = new LotDAOSerialization();
 	private static Lot lot;
 	private static OfferServiceDAO offersDAO = new OfferServiceDAOSerialization();
@@ -58,9 +58,6 @@ public class CarLotDriver {
 		
 		
 		// for Prod
-		DBService db = new DBService();
-		System.out.println(db.login("chuck", "pass").getUsername());
-		users = usersDAO.readUserService();
 		lot = lotDAO.readLot();
 		offers = offersDAO.readOfferService();
 		payments = paymentsDAO.readPaymentService();
@@ -135,7 +132,7 @@ public class CarLotDriver {
 						
 		} else if ("exit".equals(option)) {
 			
-			usersDAO.persistUserService(users);
+//			usersDAO.persistUserService(users);
 			lotDAO.persistLot(lot);
 			offersDAO.persistOfferService(offers);
 			paymentsDAO.persistPaymentService(payments);

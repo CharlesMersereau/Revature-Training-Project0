@@ -1,57 +1,68 @@
 package com.revature.dao;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Properties;
 
 import com.revature.users.Customer;
 import com.revature.users.Employee;
 import com.revature.users.User;
 
-public class DBService {
+public class ConnectionFactory {
 	
-	private static final String URL = "jdbc:postgresql://db-cm-project0.c9sibusobh4e.us-east-2.rds.amazonaws.com:5432/postgres?";
-	private static final String USERNAME= "mersereau90";
-	private static final String PASSWORD="gochiefs34";
+	private static final String PROPERTIES_FILE = "src/main/resources/database.properties";
+	private static String url = "";
+	private static String username= "";
+	private static String password="";
+	private static ConnectionFactory cf;
 	
-	public User login(String username, String password) {
+	private ConnectionFactory() {
 		
-		try (Connection conn = DriverManager.getConnection(URL,USERNAME,PASSWORD)) {
-			
-			String sql_get = "select username,first_name,last_name,user_id,user_role_id from users where username = '" + username + "' and user_password = '" + password + "'";
-			
-			Statement stmt = conn.createStatement();
-			
-			ResultSet rs = stmt.executeQuery(sql_get);
-			
-		    while (rs.next()) {
-		        String username_ = rs.getString("username");
-		        String firstName = rs.getString("first_name");
-		        String lastName = rs.getString("last_name");
-		        int userId = rs.getInt("user_id");
-		        int userRoleId = rs.getInt("user_role_id");
-		        
-		        System.out.println(firstName + " " + lastName);
-		        
-		        if (userRoleId == 1) {
-		        	Customer c = new Customer();
-		        	c.setUsername(username_);
-		        	return c;
-		        } else if (userRoleId == 2) {
-		        	Employee e = new Employee();
-		        	e.setUsername(username_);
-		        	return e;
-		        }
-		    }
-			
-		} catch (SQLException e) {
+		Properties prop = new Properties();
+		
+		try (FileInputStream fis = new FileInputStream(PROPERTIES_FILE)){
+
+			prop.load(fis);
+			url = prop.getProperty("url");
+			username = prop.getProperty("username");
+			password = prop.getProperty("password");
+
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			return null;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println(url + " " + username + " "  + password);
+	}
+	
+	public static Connection getConnection() {
+
+		if (cf == null) {
+			cf = new ConnectionFactory();
 		}
 
-		return null;
+		return cf.createConnection();
+
+	}
+	
+	private Connection createConnection() {
+
+		Connection conn = null;
+
+		try {
+			conn = DriverManager.getConnection(url, username, password);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return conn;
+
 	}
 	
 }

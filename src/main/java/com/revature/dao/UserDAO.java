@@ -1,11 +1,13 @@
 package com.revature.dao;
 
-import com.revature.users.UserService;
+import com.revature.users.User;
 
-public interface UserServiceDAO {
-
-	public void persistUserService(UserService userService);
+public interface UserDAO {
 	
-	public UserService readUserService();
+	public User authenticate(User user);
+	
+	public void logout();
+	
+	public void registerUser(User user);
 	
 }
