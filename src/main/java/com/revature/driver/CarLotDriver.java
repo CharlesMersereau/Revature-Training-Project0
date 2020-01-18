@@ -59,7 +59,7 @@ public class CarLotDriver {
 		
 		// for Prod
 		DBService db = new DBService();
-//		db.login("chuck", "pass");
+		System.out.println(db.login("chuck", "pass").getUsername());
 		users = usersDAO.readUserService();
 		lot = lotDAO.readLot();
 		offers = offersDAO.readOfferService();

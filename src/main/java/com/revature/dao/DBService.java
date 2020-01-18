@@ -32,7 +32,9 @@ public class DBService {
 		        String lastName = rs.getString("last_name");
 		        int userId = rs.getInt("user_id");
 		        int userRoleId = rs.getInt("user_role_id");
+		        
 		        System.out.println(firstName + " " + lastName);
+		        
 		        if (userRoleId == 1) {
 		        	Customer c = new Customer();
 		        	c.setUsername(username_);

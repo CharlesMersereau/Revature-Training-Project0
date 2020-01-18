@@ -3,6 +3,7 @@ package com.revature.users;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import com.revature.dao.DBService;
 import com.revature.pojo.Car;
 import com.revature.util.LoggerUtil;
 
@@ -11,28 +12,31 @@ public class UserService implements Serializable {
 	private transient LoggerUtil logger;
 	private ArrayList<User> users = new ArrayList<User>();
 	private transient User currentUser;
+	private transient DBService db = new DBService();
 	
 	public UserService() {
 		logger = new LoggerUtil();
 	}
 	
 	public User authenticateUser(User user) {
+		db = new DBService();
+		currentUser = db.login(user.getUsername(), user.getPassword());
 		
-		int i = findUser(user.getUsername());
+//		int i = findUser(user.getUsername());
+//		
+//		if (i > -1) {
+//			if (user.getPassword().equals(users.get(i).getPassword())) {
+//				currentUser = users.get(i);
+//				logger.info("System logged into by: " + currentUser.getUsername());
+//				return currentUser;
+//			} else {
+//				System.out.println("\nYou have entered the incorrect password for this account.");
+//			}
+//		} else {
+//			System.out.println("\nWe were unable to locate an account with that username: " + user.getUsername());
+//		}
 		
-		if (i > -1) {
-			if (user.getPassword().equals(users.get(i).getPassword())) {
-				currentUser = users.get(i);
-				logger.info("System logged into by: " + currentUser.getUsername());
-				return currentUser;
-			} else {
-				System.out.println("\nYou have entered the incorrect password for this account.");
-			}
-		} else {
-			System.out.println("\nWe were unable to locate an account with that username: " + user.getUsername());
-		}
-		
-		return null;
+		return currentUser;
 	}
 	
 	public void displayOptions() {
