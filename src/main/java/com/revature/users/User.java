@@ -1,30 +1,28 @@
 package com.revature.users;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.revature.pojo.Car;
 
-public class User implements Serializable {
+public class User {
 	
 	private String username;
 	private String password;
 	private String firstName;
 	private String lastName;
-	private int user_role_id;
-	private int user_id;
-	protected ArrayList<String> options = new ArrayList<String>();
+	private int userRoleId;
+	private int userId;
+	protected ArrayList<ArrayList<String>> options = new ArrayList<ArrayList<String>>();
+	private ArrayList<Car> myCars = new ArrayList<Car>();
 	
 	public User() {
 		super();
-		this.setOptions();
 	}
 
 	public User(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.setOptions();
 	}
 	
 	public String getUsername() {
@@ -43,11 +41,11 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	private void setOptions() {
-		options.add("'lot' to view cars on the lot");
+	public void setOptions(ArrayList<ArrayList<String>> options) {
+		this.options = options;
 	}
 	
-	public ArrayList<String> getOptions() {
+	public ArrayList<ArrayList<String>> getOptions() {
 		return options;
 	}
 	
@@ -67,20 +65,32 @@ public class User implements Serializable {
 		this.lastName = lastName;
 	}
 
-	public int getUser_role_id() {
-		return user_role_id;
+	public int getUserRoleId() {
+		return userRoleId;
 	}
 
-	public void setUser_role_id(int user_role_id) {
-		this.user_role_id = user_role_id;
+	public void setUserRoleId(int userRoleId) {
+		this.userRoleId = userRoleId;
 	}
 
-	public int getUser_id() {
-		return user_id;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	
+	public ArrayList<Car> getMyCars() {
+		return myCars;
+	}
+
+	public void addCar(Car car) {
+		this.myCars.add(car);
+	}
+	
+	public void setMyCars(ArrayList<Car> cars) {
+		this.myCars = cars;
 	}
 
 }

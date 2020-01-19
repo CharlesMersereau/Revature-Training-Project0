@@ -10,8 +10,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 
-import com.revature.users.Customer;
-import com.revature.users.Employee;
 import com.revature.users.User;
 
 public class ConnectionFactory {

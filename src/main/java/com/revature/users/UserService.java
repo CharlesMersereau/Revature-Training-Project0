@@ -1,24 +1,22 @@
 package com.revature.users;
 
-import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.revature.dao.UserDAO;
 import com.revature.dao.UserDAOPostgres;
-import com.revature.pojo.Car;
 import com.revature.util.LoggerUtil;
 
-public class UserService implements Serializable {
+public class UserService {
 	
-	private transient LoggerUtil logger;
-	private ArrayList<User> users = new ArrayList<User>();
-	private transient User currentUser;
-	private transient UserDAO userDAO;
+	private LoggerUtil logger;
+	private User currentUser;
+	private UserDAO userDAO;
 	
 	public UserService() {
 		logger = new LoggerUtil();
 		userDAO = new UserDAOPostgres();
+		currentUser = null;
 	}
 	
 	public User authenticateUser(User u) {
@@ -28,15 +26,27 @@ public class UserService implements Serializable {
 	
 	public void displayOptions() {
 		
-		ArrayList<String> options = currentUser.getOptions();
-		
-		for (String option : options) {
-			System.out.println(option);
+		ArrayList<ArrayList<String>> options = currentUser.getOptions();
+		int i = 0;
+		for (ArrayList<String> option : options) {
+			System.out.println(String.format("[%d] " + option.get(1), ++i));
 		}
+		
 	};
 	
 	public User getCurrentUser() {
 		return currentUser;
+	}
+	
+	public String interpretOption(Integer i) {
+		if (i >= 0 && i <= currentUser.getOptions().size()) {
+			return currentUser.getOptions().get(i-1).get(0);
+		}
+		return "try again";
+	}
+	
+	public void loadUserOptions() {
+		currentUser.setOptions(userDAO.loadUserOptions(currentUser));
 	}
 
 	public void logoutUser() {
@@ -44,11 +54,11 @@ public class UserService implements Serializable {
 		currentUser = null;
 	}
 	
-	public void registerCustomer(Customer customer) throws SQLException {
+	public void registerCustomer(User user) throws SQLException {
 		
 		try {
-			userDAO.registerCustomer(customer);
-			logger.info("Added new user: " + customer.getUsername());
+			userDAO.registerCustomer(user);
+			logger.info("Added new user: " + user.getUsername());
 			
 		} catch (SQLException e) {
 			throw e;

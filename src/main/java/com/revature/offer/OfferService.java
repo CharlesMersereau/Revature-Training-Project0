@@ -3,21 +3,21 @@ package com.revature.offer;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import com.revature.lot.Lot;
+import com.revature.cars.CarService;
 import com.revature.pojo.Offer;
+import com.revature.users.User;
 import com.revature.util.LoggerUtil;
 
 public class OfferService implements Serializable {
 
 	private ArrayList<Offer> offers = new ArrayList<Offer>();
 	private transient LoggerUtil logger = new LoggerUtil();
-	private transient Lot lot = new Lot();
+	private transient CarService lot = new CarService();
 	private int newIdNum = 0;
 	
 	public void makeOffer(Offer offer) {
 		
 		if (this.findOffer(offer) == -1) {
-			offer.setId(this.createId(offer));
 			offer.setStatus("Pending");
 			offers.add(offer);
 			logger.info("An offer has been made with id " + offer.getId());
@@ -27,7 +27,7 @@ public class OfferService implements Serializable {
 		
 	}
 	
-	public boolean acceptOffer(String offerId) {
+	public boolean acceptOffer(Integer offerId) {
 		
 		int i = findOffer(offerId);
 		
@@ -60,23 +60,23 @@ public class OfferService implements Serializable {
 		}
 	}
 	
-	public boolean rejectOffer(String offerId) {
-		Offer offer = getOffer(offerId);
+	public boolean rejectOffer(Integer integer) {
+		Offer offer = getOffer(integer);
 		if(offer == null) {
-			System.out.println("\nOffer with that ID can not be found: ".toUpperCase() + offerId + "\n");
+			System.out.println("\nOffer with that ID can not be found: ".toUpperCase() + integer + "\n");
 			return false;
 		}
 		if (!offer.getStatus().equals("Accepted")) {
 			offer.setStatus("Rejected");
-			logger.info("An offer has been rejected of id: " + offerId);
+			logger.info("An offer has been rejected of id: " + integer);
 			return true;
 		} else {
-			System.out.println("\nYou can not reject an offer that has been accepted: ".toUpperCase() + offerId + "\n");
+			System.out.println("\nYou can not reject an offer that has been accepted: ".toUpperCase() + integer + "\n");
 			return false;
 		}
 	}
 	
-	public boolean cancelOffer(String offerId) {
+	public boolean cancelOffer(Integer offerId) {
 		int i = findOffer(offerId);
 		
 		if ( i > -1 ) {
@@ -96,17 +96,8 @@ public class OfferService implements Serializable {
 		}
 	}
 	
-	private String createId(Offer offer) {
-		String id = "";
-		id = "" + offer.getUsername().toUpperCase().charAt(0)
-				+ offer.getCarId()
-				+ newIdNum;
-		newIdNum++;
-		return id;
-	}
-	
-	public Offer getOffer(String offerId) {
-		int i = findOffer(offerId);
+	public Offer getOffer(Integer integer) {
+		int i = findOffer(integer);
 		if (i > -1) {
 			return offers.get(i);
 		} else {
@@ -117,14 +108,14 @@ public class OfferService implements Serializable {
 	
 	public int findOffer(Offer offer) {
 		for (int i = 0; i < offers.size(); i++) {
-			if (offers.get(i).getUsername().equals(offer.getUsername()) && offers.get(i).getCarId().equals(offer.getCarId())) {
+			if (offers.get(i).getUserId().equals(offer.getUserId()) && offers.get(i).getCarId().equals(offer.getCarId())) {
 				return i;
 			} 
 		}
 		return -1;
 	}
 	
-	public int findOffer(String offerId) {
+	public int findOffer(Integer offerId) {
 		for (int i = 0; i < offers.size(); i++) {
 			if (offers.get(i).getId().equals(offerId)) {
 				return i;
@@ -154,14 +145,14 @@ public class OfferService implements Serializable {
 		ArrayList<Offer> userOffers = new ArrayList<Offer>();
 		
 		for (int i = 0; i < offers.size(); i++) {
-			if (offers.get(i).getUsername().equals(username)) {
+			if (offers.get(i).getUserId().equals(username)) {
 				userOffers.add(offers.get(i));
 			} 
 		}
 		return userOffers;
 	}
 	
-	public void rejectOffersOfRemovedCar(String carId) {
+	public void rejectOffersOfRemovedCar(Integer carId) {
 		for (int i = 0; i < offers.size(); i++) {
 			if (offers.get(i).getCarId().equals(carId)) {
 				rejectOffer(offers.get(i).getId());

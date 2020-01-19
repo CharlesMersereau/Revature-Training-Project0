@@ -6,22 +6,21 @@ public class Car implements Serializable {
 	
 	private String make;
 	private String model;
-	private String year;
-	private String mileage;
-	private String id;
+	private Integer year;
+	private Integer mileage;
+	private Integer price;
+	private Integer id;
 	
-	public Car(String make, String model, String year, String mileage) {
+	public Car(String make, String model, Integer year, Integer mileage, Integer price) {
 		super();
 		this.make = make;
 		this.model = model;
 		this.year = year;
 		this.mileage = mileage;
+		this.price = price;
 	}
-
-	@Override
-	public String toString() {
-		return "ID: " + id + ", " + year + " " + make.toUpperCase() + " " + model.toUpperCase() + " with " + mileage + " miles";
-	}
+	
+	public Car() {};
 	
 	public String getMake() {
 		return make;
@@ -39,27 +38,35 @@ public class Car implements Serializable {
 		this.model = model;
 	}
 	
-	public String getYear() {
+	public Integer getYear() {
 		return year;
 	}
 	
-	public void setYear(String year) {
+	public void setYear(Integer year) {
 		this.year = year;
 	}
 	
-	public String getMileage() {
+	public Integer getMileage() {
 		return mileage;
 	}
 	
-	public void setMileage(String mileage) {
+	public void setMileage(Integer mileage) {
 		this.mileage = mileage;
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
 	}
 }

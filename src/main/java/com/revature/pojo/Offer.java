@@ -4,36 +4,35 @@ import java.io.Serializable;
 
 public class Offer implements Serializable {
 	
-	private String username;
-	private String carId;
+	private Integer userId;
+	private Integer carId;
 	private Integer amount;
 	private String status;
-	private String id;
+	private Integer id;
+	private Integer numberOfMonths = 36;
 	
-	public Offer(String username, String carId, Integer amount) {
-		this.username = username;
+	public Offer(Integer userId, Integer carId, Integer amount, Integer numberOfMonths) {
+		this.userId = userId;
 		this.carId = carId;
 		this.amount = amount;
+		this.numberOfMonths = numberOfMonths;
 	}
 	
-	public String getUsername() {
-		return username;
-	}
+	public Offer() {};
 	
-	@Override
-	public String toString() {
-		return  "ID: " + id + "  Status: " + status + ", from " + username + " for " + carId + " in the amount of " + amount;
+	public Integer getUserId() {
+		return userId;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 	
-	public String getCarId() {
+	public Integer getCarId() {
 		return carId;
 	}
 	
-	public void setCarId(String carId) {
+	public void setCarId(Integer carId) {
 		this.carId = carId;
 	}
 	
@@ -53,12 +52,20 @@ public class Offer implements Serializable {
 		this.status = status;
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getNumberOfMonths() {
+		return numberOfMonths;
+	}
+
+	public void setNumberOfMonths(Integer numberOfMonths) {
+		this.numberOfMonths = numberOfMonths;
 	}
 
 }

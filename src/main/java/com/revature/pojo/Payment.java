@@ -8,13 +8,13 @@ public class Payment implements Serializable {
 	
 	private transient LoggerUtil logger = new LoggerUtil();
 	private String username;
-	private String carId;
+	private Integer carId;
 	private float amount;
 	private int paymentsRemaining = 36;
 	
 	public Payment() {}
 
-	public Payment(String username, String carId, int amount) {
+	public Payment(String username, Integer carId, int amount) {
 		setUsername(username);
 		setCarId(carId);
 		setAmount(amount);
@@ -33,11 +33,11 @@ public class Payment implements Serializable {
 		this.username = username;
 	}
 	
-	public String getCarId() {
+	public Integer getCarId() {
 		return carId;
 	}
 	
-	public void setCarId(String carId) {
+	public void setCarId(Integer carId) {
 		this.carId = carId;
 	}
 	

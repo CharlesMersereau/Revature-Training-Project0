@@ -1,20 +1,12 @@
 package com.revature.dao;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
-import com.revature.users.Customer;
-import com.revature.users.Employee;
 import com.revature.users.User;
-import com.revature.users.UserService;
 import com.revature.util.LoggerUtil;
 
 public class UserDAOPostgres implements UserDAO {
@@ -24,47 +16,73 @@ public class UserDAOPostgres implements UserDAO {
 	@Override
 	public User authenticate(User u) {
 			
-		String sql_get = "select username,first_name,last_name,user_id,user_role_id from users where username = '" + u.getUsername() + "' and user_password = '" + u.getPassword() + "'";
+		String sql = "select username,first_name,last_name,user_id,user_role_id from users where username = '" + u.getUsername() + "' and user_password = '" + u.getPassword() + "'";
 		Connection conn = ConnectionFactory.getConnection();
 		Statement stmt;
 		
 		try {
 			stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(sql_get);
+			ResultSet rs = stmt.executeQuery(sql);
 			
-			System.out.println(rs);
-			
-			if(rs.next()) {
-				String username = rs.getString("username");
-		        String firstName = rs.getString("first_name");
-		        String lastName = rs.getString("last_name");
-		        int userId = rs.getInt("user_id");
-		        int userRoleId = rs.getInt("user_role_id");
+			if (rs.next()) {
 		        
-		        if (userRoleId == 0) {
-		        	Customer customer = new Customer();
-		        	customer.setUsername(username);
-		        	return customer;
-		        } else if (userRoleId == 1) {
-		        	Employee employee = new Employee();
-		        	employee.setUsername(username);
-		        	return employee;
-		        }
+		        User user = new User();
+		      
+		        user.setUsername(rs.getString("username"));
+	        	user.setFirstName(rs.getString("first_name"));
+	        	user.setLastName(rs.getString("last_name"));
+	        	user.setUserId(rs.getInt("user_id"));
+	        	user.setUserRoleId(rs.getInt("user_role_id"));
+
+	        	return user;
+	        	
 			}
 	        
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
         
 		return null;
+	}
+	
+	@Override
+	public ArrayList<ArrayList<String>> loadUserOptions(User u) {
+		String sql = "select user_menu_option, user_menu_option_description from user_menu_options where user_role_id = " + u.getUserRoleId() + " or user_role_id is null order by option_order";
+		Connection conn = ConnectionFactory.getConnection();
+		Statement stmt;
+		ArrayList<ArrayList<String>> options = new ArrayList<ArrayList<String>>();
+		
+		try {
+			stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			while (rs.next()) {
+				
+				ArrayList<String> option = new ArrayList<String>();
+				
+				option.add(rs.getString("user_menu_option"));
+				option.add(rs.getString("user_menu_option_description"));
+		        
+				options.add(option);
+			}
+	        
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+        
+		return options;
 	}
 
 	@Override
@@ -74,23 +92,17 @@ public class UserDAOPostgres implements UserDAO {
 		Statement stmt;
 		
 		try {
+			
 			stmt = conn.createStatement();
-			int rowsUpdated = stmt.executeUpdate(sql);
 			
-			System.out.println("rows updated: " + rowsUpdated);
+			stmt.executeUpdate(sql);
 			
-	        if(rowsUpdated == 0) {
-	        	System.out.println("error registering user");
-	        }
-	        
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			throw e;
 		} finally {
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				logger.warn(e.toString());
 			}
 		}
