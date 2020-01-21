@@ -1,8 +1,6 @@
 package com.revature.pojo;
 
-import java.io.Serializable;
-
-public class Car implements Serializable {
+public class Car {
 	
 	private String make;
 	private String model;
@@ -10,15 +8,10 @@ public class Car implements Serializable {
 	private Integer mileage;
 	private Integer price;
 	private Integer id;
-	
-	public Car(String make, String model, Integer year, Integer mileage, Integer price) {
-		super();
-		this.make = make;
-		this.model = model;
-		this.year = year;
-		this.mileage = mileage;
-		this.price = price;
-	}
+	private Integer userId;
+	private Boolean paidOff;
+	private Integer purchaseAmount;
+	private Integer numberOfMonths;
 	
 	public Car() {};
 	
@@ -68,5 +61,37 @@ public class Car implements Serializable {
 
 	public void setPrice(Integer price) {
 		this.price = price;
+	}
+
+	public Boolean getPaidOff() {
+		return paidOff;
+	}
+
+	public void setPaidOff(Boolean paidOff) {
+		this.paidOff = paidOff;
+	}
+
+	public Integer getPurchaseAmount() {
+		return purchaseAmount;
+	}
+
+	public void setPurchaseAmount(Integer purchaseAmount) {
+		this.purchaseAmount = purchaseAmount;
+	}
+
+	public Integer getNumberOfMonths() {
+		return numberOfMonths;
+	}
+
+	public void setNumberOfMonths(Integer numberOfMonths) {
+		this.numberOfMonths = numberOfMonths;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 }

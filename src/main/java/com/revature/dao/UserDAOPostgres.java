@@ -16,7 +16,7 @@ public class UserDAOPostgres implements UserDAO {
 	@Override
 	public User authenticate(User u) {
 			
-		String sql = "select username,first_name,last_name,user_id,user_role_id from users where username = ? and user_password = ?";
+		String sql = "select username, first_name, last_name, user_id, user_role_id from users where username = ? and user_password = ?";
 		
 		Connection conn = ConnectionFactory.getConnection();
 		

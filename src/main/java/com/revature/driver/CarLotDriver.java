@@ -2,15 +2,18 @@ package com.revature.driver;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 import com.revature.cars.CarService;
 import com.revature.dao.CarDAO;
 import com.revature.dao.CarDAOPostgres;
 import com.revature.dao.OfferDAO;
 import com.revature.dao.OfferDAOPostgres;
-import com.revature.dao.PaymentServiceDAO;
-import com.revature.dao.PaymentServiceDAOSerialization;
+import com.revature.dao.PaymentDAO;
+import com.revature.dao.PaymentDAOPostgres;
 import com.revature.dao.UserDAO;
 import com.revature.dao.UserDAOPostgres;
 import com.revature.offer.OfferService;
@@ -32,7 +35,7 @@ public class CarLotDriver {
 	private static CarService cars = new CarService();
 	private static OfferDAO offersDAO = new OfferDAOPostgres();
 	private static OfferService offers = new OfferService();
-	private static PaymentServiceDAO paymentsDAO = new PaymentServiceDAOSerialization();;
+	private static PaymentDAO paymentsDAO = new PaymentDAOPostgres();;
 	private static PaymentService payments = new PaymentService(); 
 	
 
@@ -115,7 +118,7 @@ public class CarLotDriver {
 				System.out.println("There are no currently pending offers".toUpperCase());
 			} else {
 				
-				System.out.println(bannerCreator("These are the currently pending offers"));
+				System.out.println(bannerCreator("Currently pending offers"));
 				int counter = 0;
 				Car car;
 				User user;
@@ -159,6 +162,7 @@ public class CarLotDriver {
 						offers.acceptOffer(offer);
 						System.out.println("\nOffer succesfully accepted!");
 					} catch (SQLException e) {
+						e.printStackTrace();
 						System.out.println("\nThere was an error accepting the offer".toUpperCase());
 					}
 				}
@@ -167,6 +171,8 @@ public class CarLotDriver {
 		} else if ("add car".equals(option)) {
 			
 			Car car = new Car();
+			
+			System.out.println(bannerCreator("Add a car"));
 			
 			System.out.println("\nEnter the information for the car you want to add");
 			System.out.print("Make: ");
@@ -208,7 +214,7 @@ public class CarLotDriver {
 				System.out.println("\nYou have no offers".toUpperCase());
 			} else {
 				
-				System.out.println(bannerCreator("\nHere are your current offers"));
+				System.out.println(bannerCreator("Your current offers"));
 				int counter = 0;
 				Car car;
 				
@@ -236,7 +242,12 @@ public class CarLotDriver {
 						} else if (offerNumber > 0) {
 							offer = userOffers.get(offerNumber - 1);
 							option = "";
-						}
+							
+							if (offer.getStatus().toUpperCase().equals("accepted".toUpperCase())) {
+								System.out.println("\nAn accepted offer cannot be cancelled".toUpperCase());
+								option = "try again";
+							}
+						} 
 						
 					} catch (NumberFormatException e) {
 						System.out.println("\nInvalid input".toUpperCase());
@@ -266,8 +277,11 @@ public class CarLotDriver {
 			
 			User user;
 			
+			System.out.println(bannerCreator("login"));
+			
 			do {
 				user = new User();
+				
 				System.out.println("\nEnter your credentials to log in");
 				
 				System.out.print("Username: ");
@@ -322,7 +336,7 @@ public class CarLotDriver {
 			if (available.isEmpty()) {
 				System.out.println("\nThere are no vehicles currently available".toUpperCase());
 			} else {
-				System.out.println(bannerCreator("We currently have the following vehicles available"));
+				System.out.println(bannerCreator("vehicles available for offer"));
 				int counter = 0;
 				for (Car car : available) {
 					System.out.println(String.format("\n[%d] %d %s %s with %,d miles for $%,d", ++counter, car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase(), car.getMileage(), car.getPrice()));
@@ -399,25 +413,95 @@ public class CarLotDriver {
 						
 		} else if ("make payment".equals(option)) {
 			
-			System.out.println("\nLet's get some info for your payment");
-			System.out.print("ID of car to make a payment on: ");
-			String carId = scan.nextLine();
-			System.out.print("Amount of payment: ");
-			Float amount = (float)0;
-					
+			ArrayList<Car> myCars;
+			
 			try {
 				
-				amount = Float.parseFloat(scan.nextLine());
-				Payment paymentToBeMadeOn = payments.getPayment(carId);
+				myCars = cars.loadUserCars(users.getCurrentUser().getUserId());
 				
-				if (paymentToBeMadeOn != null) {
-					paymentToBeMadeOn.makePayment(amount);
+				if (myCars.isEmpty()) {
+					System.out.println("\nYou have not bought any cars".toUpperCase());
 				} else {
-					System.out.println("\nCannot find a payment for you matching that car ID");
+					System.out.println(bannerCreator("Here are your cars"));
+					int counter = 0;
+					for (Car car : myCars) {
+						System.out.println(String.format("\n[%d] %d %s %s",++counter, car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase()));
+					}
 				}
 				
-			} catch (NumberFormatException e) {
-				System.out.println("\nPAYMENT AMOUNTS MUST CONTAIN NUMBERS ONLY".toUpperCase());;
+				Integer carNumber = 0;
+				Car car = new Car();
+				
+				do {
+					
+					System.out.println("\nWhich car would you like to make a payment on? (enter 0 to cancel)");
+					System.out.print("Car number: ");
+					
+					try {
+						
+						carNumber = Integer.parseInt(scan.nextLine());
+						
+						if (carNumber < 0 || carNumber > myCars.size()) {
+							System.out.println("\nInvalid option".toUpperCase());
+							option = "try again";
+						} else if (carNumber > 0) {
+							car = myCars.get(carNumber - 1);
+							option = "";
+							if (car.getPaidOff()) {
+								System.out.println("\nThe car you have chosen is already paid off".toUpperCase());
+								option = "try again";
+							}
+						}
+						
+					} catch (NumberFormatException e) {
+						System.out.println("\nInvalid input".toUpperCase());
+						carNumber = -1;
+						option = "try again";
+					}
+					
+				} while("try again".equals(option) && carNumber != 0);
+				
+				
+				if (carNumber != 0) {
+					do {
+						
+						System.out.print("\nAmount of payment: ");
+						Float amount = (float)0;
+						
+						try {
+							
+							amount = Float.parseFloat(scan.nextLine());
+							
+							if (amount > 0) {
+								
+								Payment payment = new Payment();
+								payment.setAmount(amount);
+								payment.setUser(users.getCurrentUser());
+								payment.setCar(car);
+								
+								try {
+									payments.makePayment(payment);
+									System.out.println("\nPayment succesful!");
+								} catch (SQLException e) {
+									System.out.println("\nThere was an error making your payment".toUpperCase());
+								}
+								
+								option = "";
+								
+							} else {
+								System.out.println("\nPayments must be greater than 0");
+								option = "try again";
+							}
+							
+						} catch (NumberFormatException e) {
+							System.out.println("\nPAYMENT AMOUNTS MUST CONTAIN NUMBERS ONLY".toUpperCase());
+							option = "try again";
+						}
+					} while ("try again".equals(option));
+				}
+				
+			} catch (SQLException e) {
+				System.out.println("\nThere was an error loading your cars".toUpperCase());
 			}
 			
 		} else if ("my cars".equals(option)) {
@@ -428,10 +512,14 @@ public class CarLotDriver {
 				
 				myCars = cars.loadUserCars(users.getCurrentUser().getUserId());
 				
-				System.out.println(bannerCreator("Here are your cars"));
-				
-				for (Car car : myCars) {
-					System.out.println(String.format("\n%d %s %s", car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase()));
+				if (myCars.isEmpty()) {
+					System.out.println("\nYou have not bought any cars".toUpperCase());
+				} else {
+					System.out.println(bannerCreator("Your cars"));
+					
+					for (Car car : myCars) {
+						System.out.println(String.format("\n%d %s %s", car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase()));
+					}
 				}
 				
 			} catch (SQLException e) {
@@ -451,7 +539,7 @@ public class CarLotDriver {
 			if (myOffers.isEmpty()) {
 				System.out.println("\nYou have no offers".toUpperCase());
 			} else {
-				System.out.println(bannerCreator("Here are your current offers:"));
+				System.out.println(bannerCreator("Your current offers"));
 				
 				Car car;
 				for (Offer offer : myOffers) {
@@ -463,18 +551,88 @@ public class CarLotDriver {
 			
 		} else if ("my payments".equals(option)) {
 			
-			ArrayList<Payment> userPayments = payments.getUserPayments(users.getCurrentUser().getUsername());
+			ArrayList<Payment> userPayments = new ArrayList<Payment>();
+			ArrayList<Car> myCars = new ArrayList<Car>();
 			
-			System.out.println("\nThese are the current ongoing payments\n");
-			for (Payment payment : userPayments) {
-				System.out.println(payment.getRemainingPayments() + "\n");
+			try {
+				myCars = cars.loadUserCars(users.getCurrentUser().getUserId());
+			} catch (SQLException e) {
+				System.out.println("There was an error loading your cars to pay on".toUpperCase());
+			}
+			
+			if (myCars.isEmpty()) {
+				System.out.println("\nYou have no cars to make payments on".toUpperCase());
+			} else {
+				
+				try {
+					
+					System.out.println(bannerCreator("Your cars"));
+					
+					userPayments = payments.getRemainingPayments(users.getCurrentUser());
+					 
+					Map<Integer,ArrayList<Float>> sums = new HashMap<Integer,ArrayList<Float>>();
+					
+					for (Payment payment : userPayments) {
+						
+						if (sums.containsKey(payment.getCar().getId())) {
+							
+							ArrayList<Float> current = sums.get(payment.getCar().getId());
+							Float currentSum = current.get(0);
+							Float currentMonths = current.get(1);
+							current.clear();
+							
+							currentSum += payment.getAmount();
+							currentMonths+= (float)1;
+							current.add(currentSum);
+							current.add(currentMonths);
+							sums.replace(payment.getCar().getId(), current);
+							
+						} else {
+							ArrayList<Float> newSums = new ArrayList<Float>();
+							newSums.add(payment.getAmount());
+							newSums.add((float)1);
+							sums.put(payment.getCar().getId(), newSums);
+						}
+						
+					}
+						
+					for (Car car : myCars) {
+						
+						if (car.getPaidOff()) {
+							System.out.println(String.format("\n%d %s %s is paid off!", car.getYear(), car.getMake(), car.getModel()));
+						} else {
+
+							float remainingAmount = (float)car.getPurchaseAmount();
+							float remainingMonths = car.getNumberOfMonths();
+							
+							if (sums.containsKey(car.getId())) {
+								remainingAmount -= sums.get(car.getId()).get(0);
+								remainingMonths -= sums.get(car.getId()).get(1);
+							}
+							
+							float monthly = remainingAmount / remainingMonths;
+							
+							System.out.println(String.format("\n%d payments of $%,.2f remaining on %d %s %s TOTAL: $%,.2f", (int)remainingMonths, monthly, car.getYear(), car.getMake(), car.getModel(), remainingAmount));
+						
+						}
+						
+					}
+					
+				} catch (SQLException e) {
+					System.out.println("\nThere was an error loading your payments".toUpperCase());
+				}
 			}
 			
 		} else if ("register".equals(option)) {
 			
 			User customer;
+			
+			System.out.println(bannerCreator("Register an account"));
+			
 			do {
+				
 				try {
+					
 					System.out.println("\nEnter a username and password to register.");
 					
 					customer = new User();
@@ -528,7 +686,7 @@ public class CarLotDriver {
 				System.out.println("There are no currently pending offers".toUpperCase());
 			} else {
 				
-				System.out.println(bannerCreator("These are the currently pending offers"));
+				System.out.println(bannerCreator("Currently pending offers"));
 				int counter = 0;
 				Car car;
 				User user;
@@ -590,7 +748,7 @@ public class CarLotDriver {
 			if (available.isEmpty()) {
 				System.out.println("There are no vehicles currently available".toUpperCase());
 			} else {
-				System.out.println(bannerCreator("We currently have the following vehicles available"));
+				System.out.println(bannerCreator("Available vehicles"));
 				int counter = 0;
 				for (Car car : available) {
 					System.out.println(String.format("\n[%d] %d %s %s with %,d miles for $%,d", ++counter, car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase(), car.getMileage(), car.getPrice()));				
@@ -614,7 +772,6 @@ public class CarLotDriver {
 						option = "try again";
 					} else if (carNumber > 0) {
 						car = available.get(carNumber - 1);
-						carNumber = -1;
 						option = "";
 					}
 					
@@ -653,7 +810,7 @@ public class CarLotDriver {
 			if (available.isEmpty()) {
 				System.out.println("There are no vehicles currently available".toUpperCase());
 			} else {
-				System.out.println(bannerCreator("We currently have the following vehicles available"));
+				System.out.println(bannerCreator("Available vehicles"));
 				for (Car car : available) {
 					System.out.println(String.format("\n%d %s %s with %,d miles for $%,d", car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase(), car.getMileage(), car.getPrice()));				
 				}
@@ -672,7 +829,7 @@ public class CarLotDriver {
 			if (pendingOffers.isEmpty()) {
 				System.out.println("\nThere are no currently pending offers".toUpperCase());
 			} else {
-				System.out.println(bannerCreator("These are the currently pending offers"));
+				System.out.println(bannerCreator("Currently pending offers"));
 				int counter = 0;
 				Car car;
 				User user;
@@ -685,11 +842,21 @@ public class CarLotDriver {
 			
 		} else if ("view payments".equals(option)) {
 			
-			ArrayList<Payment> allPayments = payments.getPayments();
+			ArrayList<Payment> allPayments;
 			
-			System.out.println("\nThese are all the currently ongoing payments\n");
-			for (Payment payment : allPayments) {
-				System.out.println(payment.getUsername() + " has " + payment.getRemainingPayments() + "\n");
+			try {
+				allPayments = payments.getPayments();
+				
+				System.out.println(bannerCreator("User payments"));
+				
+				for (Payment payment : allPayments) {
+					User user = payment.getUser();
+					Car car = payment.getCar();
+					System.out.println(String.format("\n%s %s paid $%,.2f for %d %s %s", user.getFirstName().toUpperCase(), user.getLastName().toUpperCase(), payment.getAmount(), car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase()));
+				}
+				
+			} catch (SQLException e) {
+				System.out.println("Error loading payments".toUpperCase());
 			}
 			
 		} else {

@@ -83,7 +83,7 @@ public class CarDAOPostgres implements CarDAO {
 	@Override
 	public ArrayList<Car> getCars() throws SQLException {
 		
-		String sql = "select car_id,make,model,model_year,mileage,price from cars where user_id is NULL";                     
+		String sql = "select car_id, make, model, model_year, mileage, price from cars where user_id is NULL";                     
 		
 		Connection conn = ConnectionFactory.getConnection();
 		
@@ -124,7 +124,7 @@ public class CarDAOPostgres implements CarDAO {
 	@Override
 	public ArrayList<Car> getUserCars(Integer userId) throws SQLException {
 		
-		String sql = "select car_id,make,model,model_year,mileage,price from cars where user_id = ?";                     
+		String sql = "select car_id, make, model, model_year, mileage, price, paid_off, purchase_amount, number_months from cars where user_id = ?";                     
 		
 		Connection conn = ConnectionFactory.getConnection();
 		
@@ -147,6 +147,9 @@ public class CarDAOPostgres implements CarDAO {
 		        car.setYear(rs.getInt("model_year"));
 		        car.setMileage(rs.getInt("mileage"));
 		        car.setPrice(rs.getInt("price"));
+		        car.setPaidOff(rs.getBoolean("paid_off"));
+		        car.setPurchaseAmount(rs.getInt("purchase_amount"));
+		        car.setNumberOfMonths(rs.getInt("number_months"));
 		        
 		        cars.add(car);
 			}

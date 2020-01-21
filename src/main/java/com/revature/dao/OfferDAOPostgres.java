@@ -80,7 +80,7 @@ public class OfferDAOPostgres implements OfferDAO {
 
 		if (rowsUpdated == 1) {
 			
-			String sql_give_user_car = "update cars set user_id = ?, purchase_amount = ? where car_id = ?";
+			String sql_give_user_car = "update cars set user_id = ?, purchase_amount = ?, number_months = ? where car_id = ?";
 			
 			conn = ConnectionFactory.getConnection();
 			
@@ -90,7 +90,8 @@ public class OfferDAOPostgres implements OfferDAO {
 				stmt2 = conn.prepareStatement(sql_give_user_car);
 				stmt2.setInt(1,offer.getUser().getUserId());
 				stmt2.setInt(2, offer.getAmount());
-				stmt2.setInt(3, offer.getCar().getId());
+				stmt2.setInt(3, offer.getNumberOfMonths());
+				stmt2.setInt(4, offer.getCar().getId());
 				
 				rowsUpdated = stmt2.executeUpdate();
 				
