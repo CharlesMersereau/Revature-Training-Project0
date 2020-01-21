@@ -124,3 +124,98 @@
 2020-01-19 01:07:16 INFO  root:25 - System logged out of by: chuck
 2020-01-19 01:07:22 INFO  root:25 - System logged into by: Adam Wahl [awahl]
 2020-01-19 01:07:41 INFO  root:25 - System logged out of by: awahl
+2020-01-20 12:36:59 INFO  root:25 - System booted up
+2020-01-20 12:37:13 INFO  root:25 - System logged into by: Adam Wahl [awahl]
+2020-01-20 12:38:27 INFO  root:25 - An offer has been made with id null
+2020-01-20 14:01:37 INFO  root:25 - System booted up
+2020-01-20 14:11:16 INFO  root:25 - System booted up
+2020-01-20 14:11:28 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 15:12:48 INFO  root:25 - System booted up
+2020-01-20 15:12:56 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 15:14:00 INFO  root:25 - System booted up
+2020-01-20 15:14:08 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 15:15:15 INFO  root:25 - System booted up
+2020-01-20 15:15:23 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 15:15:54 INFO  root:25 - System booted up
+2020-01-20 15:16:00 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 15:16:23 INFO  root:25 - System booted up
+2020-01-20 15:16:34 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 15:17:17 INFO  root:25 - System booted up
+2020-01-20 15:17:24 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 15:17:51 INFO  root:25 - System booted up
+2020-01-20 15:17:57 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 15:21:45 INFO  root:25 - System booted up
+2020-01-20 15:21:51 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 15:44:35 INFO  root:25 - System booted up
+2020-01-20 15:44:54 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 15:46:03 INFO  root:25 - System booted up
+2020-01-20 15:46:12 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 16:31:24 INFO  root:25 - System booted up
+2020-01-20 16:31:37 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 16:33:15 INFO  root:25 - System booted up
+2020-01-20 16:33:29 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 16:41:30 INFO  root:25 - System booted up
+2020-01-20 16:41:38 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 16:50:11 INFO  root:25 - System booted up
+2020-01-20 16:50:18 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 16:51:55 INFO  root:25 - System booted up
+2020-01-20 16:52:04 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 16:54:09 INFO  root:25 - System booted up
+2020-01-20 16:54:16 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 16:56:34 INFO  root:25 - System booted up
+2020-01-20 16:56:39 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 16:57:35 INFO  root:25 - System booted up
+2020-01-20 16:57:42 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 16:57:47 INFO  root:25 - An offer has been accepted: [8] $4,500 for [13] 2005 toyota tundra by [2] Adam Wahl
+2020-01-20 16:58:06 INFO  root:25 - System logged out of by: chuck
+2020-01-20 16:58:26 INFO  root:25 - System logged into by: Adam Wahl [awahl]
+2020-01-20 17:03:31 INFO  root:25 - System booted up
+2020-01-20 17:03:43 INFO  root:25 - System logged into by: Adam Wahl [awahl]
+2020-01-20 17:08:49 INFO  root:25 - System booted up
+2020-01-20 17:09:12 INFO  root:25 - System booted up
+2020-01-20 17:09:26 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 17:09:31 INFO  root:25 - System logged out of by: chuck
+2020-01-20 17:09:38 INFO  root:25 - System logged into by: Adam Wahl [awahl]
+2020-01-20 17:11:21 INFO  root:25 - System booted up
+2020-01-20 17:11:29 INFO  root:25 - System logged into by: Adam Wahl [awahl]
+2020-01-20 17:41:59 INFO  root:25 - System booted up
+2020-01-20 17:42:06 INFO  root:25 - System logged into by: Adam Wahl [awahl]
+2020-01-20 17:42:42 INFO  root:25 - System logged out of by: awahl
+2020-01-20 17:42:59 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 17:43:18 INFO  root:25 - System logged out of by: chuck
+2020-01-20 17:43:23 INFO  root:25 - System logged into by: null null [charlie]
+2020-01-20 18:06:21 INFO  root:25 - System booted up
+2020-01-20 18:06:31 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 18:07:38 INFO  root:25 - An offer has been rejected: [6] $3,500 for [13] 2005 toyota tundra by [5] Michael Jordan
+2020-01-20 18:08:36 INFO  root:25 - An offer has been accepted: [2] $19,500 for [11] 2019 jeep grand cherokee by [3] Addy Hoover
+2020-01-20 18:34:40 INFO  root:25 - System booted up
+2020-01-20 18:35:03 INFO  root:25 - Added new user: addie
+2020-01-20 18:35:42 INFO  root:25 - System logged into by: Addy Hoover [addyhoover]
+2020-01-20 19:10:42 INFO  root:25 - System booted up
+2020-01-20 19:11:42 INFO  root:25 - System logged into by: Addy Hoover [addyhoover]
+2020-01-20 19:16:38 INFO  root:25 - System booted up
+2020-01-20 19:16:50 INFO  root:25 - System logged into by: Addy Hoover [addyhoover]
+2020-01-20 19:19:11 INFO  root:25 - System booted up
+2020-01-20 19:19:20 INFO  root:25 - System logged into by: Addy Hoover [addyhoover]
+2020-01-20 19:20:18 INFO  root:25 - System booted up
+2020-01-20 19:20:26 INFO  root:25 - System logged into by: Addy Hoover [addyhoover]
+2020-01-20 19:20:51 INFO  root:25 - An offer has been made with id null
+2020-01-20 19:21:55 INFO  root:25 - An offer has been made with id null
+2020-01-20 19:25:56 INFO  root:25 - System booted up
+2020-01-20 19:26:12 INFO  root:25 - System logged into by: Addy Hoover [addyhoover]
+2020-01-20 19:26:29 INFO  root:25 - An offer has been deleted: [10] $12,000 for [14] 1968 dodge charger by [3] Addy Hoover
+2020-01-20 19:27:27 INFO  root:25 - An offer has been deleted: [9] $3,400 for [9] 2001 oldsmobile alero by [3] Addy Hoover
+2020-01-20 19:27:45 INFO  root:25 - System logged out of by: addyhoover
+2020-01-20 19:27:51 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 19:28:11 INFO  root:25 - Car added to lot of id: com.revature.pojo.Car@7d0587f1
+2020-01-20 19:30:46 INFO  root:25 - System booted up
+2020-01-20 19:30:53 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 19:32:11 INFO  root:25 - Car removed from lot: [18] ford mustang 2020
+2020-01-20 19:35:11 INFO  root:25 - System booted up
+2020-01-20 19:35:19 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 19:35:28 INFO  root:25 - Car added to lot of id: com.revature.pojo.Car@9660f4e
+2020-01-20 19:37:33 INFO  root:25 - System booted up
+2020-01-20 19:37:43 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 19:38:41 INFO  root:25 - System booted up
+2020-01-20 19:38:48 INFO  root:25 - System logged into by: Chuck Mersereau [chuck]
+2020-01-20 19:38:57 INFO  root:25 - Car removed from lot: [19] f f 3

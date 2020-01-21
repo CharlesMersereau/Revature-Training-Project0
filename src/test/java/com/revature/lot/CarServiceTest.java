@@ -2,6 +2,7 @@ package com.revature.lot;
 
 import static org.junit.Assert.*;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import org.junit.Before;
@@ -23,19 +24,35 @@ public class CarServiceTest {
 	public void addCar() {
 //		Car newCar = new Car("ford","fiesta","2008","135,000");
 //		lot.addCar(newCar);
-		ArrayList<Car> cars = lot.getCars();
+		try {
+			ArrayList<Car> cars = lot.getCars();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		assertTrue(cars.get(0).getMake().equals(newCar.getMake()));
 	}
 	
 	@Test
 	public void addAnotherCarOfSameMakeAndModel() {
-		ArrayList<Car> cars = lot.getCars();
+		ArrayList<Car> cars = null;
+		try {
+			cars = lot.getCars();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		assertEquals(0, cars.size());
 //		Car newCar1 = new Car("toyota","camry","2013","55,000");
 //		Car newCar2 = new Car("toyota","camry","2013","58,000");
 //		lot.addCar(newCar1);
 //		lot.addCar(newCar2);
-		cars = lot.getCars();
+		try {
+			cars = lot.getCars();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		assertTrue(cars.get(0).getModel().equals(cars.get(1).getModel()));
 	}
 	

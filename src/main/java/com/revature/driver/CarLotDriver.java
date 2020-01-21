@@ -7,8 +7,8 @@ import java.util.Scanner;
 import com.revature.cars.CarService;
 import com.revature.dao.CarDAO;
 import com.revature.dao.CarDAOPostgres;
-import com.revature.dao.OfferServiceDAO;
-import com.revature.dao.OfferServiceDAOSerialization;
+import com.revature.dao.OfferDAO;
+import com.revature.dao.OfferDAOPostgres;
 import com.revature.dao.PaymentServiceDAO;
 import com.revature.dao.PaymentServiceDAOSerialization;
 import com.revature.dao.UserDAO;
@@ -30,7 +30,7 @@ public class CarLotDriver {
 	private static UserService users = new UserService();
 	private static CarDAO lotDAO = new CarDAOPostgres();
 	private static CarService cars = new CarService();
-	private static OfferServiceDAO offersDAO = new OfferServiceDAOSerialization();
+	private static OfferDAO offersDAO = new OfferDAOPostgres();
 	private static OfferService offers = new OfferService();
 	private static PaymentServiceDAO paymentsDAO = new PaymentServiceDAOSerialization();;
 	private static PaymentService payments = new PaymentService(); 
@@ -41,16 +41,10 @@ public class CarLotDriver {
 		String option = "";
 	
 		logger.info("System booted up");
-		try {
-			cars.loadCars();
-		} catch (SQLException e) {
-			// set flag to reload
-		}
 
 		System.out.println(bannerCreator("Welcome to the car lot!"));
 		
 		do {
-			
 			
 			do {
 				displayOptions();
@@ -75,12 +69,11 @@ public class CarLotDriver {
 						System.out.println("\nInvalid option".toUpperCase());
 					}
 				} catch (NumberFormatException e) {
-					System.out.println("\nInvalid option".toUpperCase());
+					System.out.println("\nInvalid input".toUpperCase());
 					option = "try again";
 				} catch (Exception e) {
 					// hopefully this doesn't happen
 				}
-				
 				
 			} while ("try again".equals(option));
 			
@@ -92,16 +85,16 @@ public class CarLotDriver {
 	
 	private static void displayOptions() {
 		
-		System.out.println(bannerCreator("Select an option from the list below"));
+		System.out.println(bannerCreator("Select an option from the list below") + "\n");
 		
 		if (users.getCurrentUser() == null) {
 			System.out.println("[1] Log into your account");
 			System.out.println("[2] Register new user");
-			System.out.print("[3] Exit the car lot app");
+			System.out.println("[3] Exit the car lot app");
 		} else {
 			users.displayOptions();
 		}
-		System.out.print("\n\nOption: ");
+		System.out.print("\nOption: ");
 		
 	}
 	
@@ -110,15 +103,65 @@ public class CarLotDriver {
 		
 		if ("accept offer".equals(option)) {
 			
-			System.out.println("\nEnter the ID of the offer you'd like to accept");
-			System.out.print("ID: ");
-			Integer offerId = Integer.parseInt(scan.nextLine());
-			boolean accepted = offers.acceptOffer(offerId);
+			ArrayList<Offer> pendingOffers = new ArrayList<Offer>();
 			
-			if(accepted) {
+			try {
+				pendingOffers = offers.getPendingOffers();
+			} catch (SQLException e) {
+				System.out.println("There was an error loading the currently pending offers".toUpperCase());
+			}
+			
+			if (pendingOffers.isEmpty()) {
+				System.out.println("There are no currently pending offers".toUpperCase());
+			} else {
 				
-//				users.transferCarToUser(car,username);
+				System.out.println(bannerCreator("These are the currently pending offers"));
+				int counter = 0;
+				Car car;
+				User user;
 				
+				for (Offer offer: pendingOffers) {
+					car = offer.getCar();
+					user = offer.getUser();
+					System.out.println(String.format("\n[%d] $%,d by %s %s for %d %s %s listed at $%,d", ++counter, offer.getAmount(), user.getFirstName(), user.getLastName(), car.getYear(), car.getMake(), car.getModel(), car.getPrice()));
+				}
+				
+				Integer offerNumber = 0;
+				Offer offer = null;
+				
+				do {
+					
+					System.out.println("\nWhich offer would you like to accept? (enter 0 to cancel)");
+					System.out.print("Offer number: ");
+					
+					try {
+						
+						offerNumber = Integer.parseInt(scan.nextLine());
+						
+						if (offerNumber < 0 || offerNumber > pendingOffers.size()) {
+							System.out.println("\nInvalid option".toUpperCase());
+							option = "try again";
+						} else if (offerNumber > 0) {
+							offer = pendingOffers.get(offerNumber - 1);
+							option = "";
+						}
+						
+					} catch (NumberFormatException e) {
+						System.out.println("\nInvalid input".toUpperCase());
+						offerNumber = -1;
+						option = "try again";
+					}
+					
+				} while("try again".equals(option) && offerNumber != 0 );
+					
+				if (offerNumber != 0) {
+					try {
+						offers.acceptOffer(offer);
+						System.out.println("\nOffer succesfully accepted!");
+					} catch (SQLException e) {
+						System.out.println("\nThere was an error accepting the offer".toUpperCase());
+					}
+				}
 			}
 			
 		} else if ("add car".equals(option)) {
@@ -153,9 +196,67 @@ public class CarLotDriver {
 			
 		} else if ("cancel offer".equals(option)) {
 			
-			System.out.println("\nEnter the ID of the offer you'd like to cancel");
-			System.out.print("ID: ");
-			offers.cancelOffer(Integer.parseInt(scan.nextLine()));
+			ArrayList<Offer> userOffers = new ArrayList<Offer>();
+			
+			try {
+				userOffers = offers.getUserOffers(users.getCurrentUser().getUserId());
+			} catch (SQLException e) {
+				System.out.println("\nThere was an error loading your offers".toUpperCase());
+			}
+			
+			if (userOffers.isEmpty()) {
+				System.out.println("\nYou have no offers".toUpperCase());
+			} else {
+				
+				System.out.println(bannerCreator("\nHere are your current offers"));
+				int counter = 0;
+				Car car;
+				
+				for (Offer offer: userOffers) {
+					car = offer.getCar();
+					System.out.println(String.format("\n[%d] Status: %s, $%,d for %d %s %s listed at $%,d", ++counter, offer.getStatus().toUpperCase(), offer.getAmount(), car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase(), car.getPrice()));
+				}
+				
+				Integer offerNumber = 0;
+				Offer offer = null;
+				
+				do {
+					
+					System.out.println("\nWhich offer would you like to cancel?");
+					System.out.println("(an accepted offer cannot be cancelled, enter 0 to exit)");
+					System.out.print("Offer number: ");
+					
+					try {
+						
+						offerNumber = Integer.parseInt(scan.nextLine());
+						
+						if (offerNumber < 0 || offerNumber > userOffers.size()) {
+							System.out.println("\nInvalid option".toUpperCase());
+							option = "try again";
+						} else if (offerNumber > 0) {
+							offer = userOffers.get(offerNumber - 1);
+							option = "";
+						}
+						
+					} catch (NumberFormatException e) {
+						System.out.println("\nInvalid input".toUpperCase());
+						offerNumber = -1;
+						option = "try again";
+					}
+					
+				} while("try again".equals(option) && offerNumber != 0 );
+					
+				if (offerNumber != 0) {
+					try {
+						offer.setUser(users.getCurrentUser());
+						offers.cancelOffer(offer);
+						System.out.println("\nOffer succesfully cancelled!");
+					} catch (SQLException e) {
+						System.out.println("\nThere was an error canceling the offer".toUpperCase());
+					}
+				}
+			}
+			
 						
 		} else if ("exit".equals(option)) {
 			
@@ -208,21 +309,93 @@ public class CarLotDriver {
 		} else if ("make offer".equals(option)) {
 			
 			Offer offer = new Offer();
-			offer.setUserId(users.getCurrentUser().getUserId());
+			offer.setUser(users.getCurrentUser());
+
+			ArrayList<Car> available = new ArrayList<Car>();
 			
-			System.out.println("\nEnter the car ID and the amount of the offer");
-			System.out.print("Car ID: ");
-			String carId = scan.nextLine();
-			
-			if (cars.findCar(carId) > -1) {
-				
-				System.out.print("Amount: ");
-				Integer amount = Integer.parseInt(scan.nextLine());
-				offers.makeOffer(offer);
-				
-			} else {
-				System.out.println("\nSorry, but we could not locate a car with that ID.");
+			try {
+				available = cars.getCars();
+			} catch (SQLException e) {
+				// set flag to reload
 			}
+
+			if (available.isEmpty()) {
+				System.out.println("\nThere are no vehicles currently available".toUpperCase());
+			} else {
+				System.out.println(bannerCreator("We currently have the following vehicles available"));
+				int counter = 0;
+				for (Car car : available) {
+					System.out.println(String.format("\n[%d] %d %s %s with %,d miles for $%,d", ++counter, car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase(), car.getMileage(), car.getPrice()));
+				}
+			}
+			
+			Integer carNumber;
+			Car car = new Car();
+			
+			do {
+				
+				System.out.println("\nWhich car would you like to make an offer on?");
+				System.out.print("Car number: ");
+				
+				try {
+					
+					carNumber = Integer.parseInt(scan.nextLine());
+					
+					if (carNumber < 1 || carNumber > available.size()) {
+						System.out.println("\nInvalid option".toUpperCase());
+						option = "try again";
+					} else {
+						car = available.get(carNumber - 1);
+						offer.setCar(car);
+						option = "";
+					}
+					
+				} catch (NumberFormatException e) {
+					System.out.println("\nInvalid input".toUpperCase());
+					option = "try again";
+				}
+				
+			} while("try again".equals(option));
+			
+			do {
+				
+				try {
+					
+					System.out.print("\nOffer mount: ");
+					Integer amount = Integer.parseInt(scan.nextLine());
+					offer.setAmount(amount);
+					option = "";
+					
+				} catch (NumberFormatException e) {
+					System.out.println("\nInvalid input".toUpperCase());
+					option = "try again";
+				}
+				
+			} while("try again".equals(option));
+			
+			do {
+				
+				try {
+					
+					System.out.print("\nNumber of months: ");
+					Integer numberOfMonths = Integer.parseInt(scan.nextLine());
+					offer.setNumberOfMonths(numberOfMonths);
+					option = "";
+					
+				} catch (NumberFormatException e) {
+					System.out.println("\nInvalid input".toUpperCase());
+					option = "try again";
+				}
+				
+			} while("try again".equals(option));
+			
+			try {
+				offers.makeOffer(offer);
+				System.out.println("\nOffer succesfully submitted!");
+			} catch (SQLException e) {
+				System.out.println("There was an error submitting your offer".toUpperCase());
+			}
+			
 						
 		} else if ("make payment".equals(option)) {
 			
@@ -253,17 +426,12 @@ public class CarLotDriver {
 			
 			try {
 				
-				if (cars.getCurrentUserCars().size() == 0) {
-					myCars = cars.loadUserCars(users.getCurrentUser().getUserId());
-					cars.setCurrentUserCars(myCars);
-				} else {
-					myCars = cars.getCurrentUserCars();
-				}
+				myCars = cars.loadUserCars(users.getCurrentUser().getUserId());
 				
 				System.out.println(bannerCreator("Here are your cars"));
 				
 				for (Car car : myCars) {
-					System.out.println(car + "\n");
+					System.out.println(String.format("\n%d %s %s", car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase()));
 				}
 				
 			} catch (SQLException e) {
@@ -272,12 +440,25 @@ public class CarLotDriver {
 			
 		} else if ("my offers".equals(option)) {
 			
-			ArrayList<Offer> myOffers = offers.getUserOffers(users.getCurrentUser().getUsername());
-
-			System.out.println("\nHere are your current offers:\n");
+			ArrayList<Offer> myOffers = new ArrayList<Offer>();
 			
-			for (Offer offer : myOffers) {
-				System.out.println(offer + "\n");
+			try {
+				myOffers = offers.getUserOffers(users.getCurrentUser().getUserId());
+			} catch (SQLException e) {
+				System.out.println("\nThere was an error retrieving your offers");
+			}
+
+			if (myOffers.isEmpty()) {
+				System.out.println("\nYou have no offers".toUpperCase());
+			} else {
+				System.out.println(bannerCreator("Here are your current offers:"));
+				
+				Car car;
+				for (Offer offer : myOffers) {
+					car = offer.getCar();
+					System.out.println(String.format("\nStatus: %s, $%,d for %d %s %s listed at $%,d", offer.getStatus().toUpperCase(), offer.getAmount(), car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase(), car.getPrice()));
+					
+				}
 			}
 			
 		} else if ("my payments".equals(option)) {
@@ -335,45 +516,171 @@ public class CarLotDriver {
 			
 		} else if ("reject offer".equals(option)) {
 			
-			System.out.println("\nEnter the ID of the offer you'd like to reject");
-			System.out.print("ID: ");
-			offers.rejectOffer(Integer.parseInt(scan.nextLine()));
-			
-		} else if ("remove car".equals(option)) {
-			
-			System.out.println("\nPlease enter the ID of the car you'd like to remove");
-			System.out.print("ID: ");
-			Integer id = Integer.parseInt(scan.nextLine());
+			ArrayList<Offer> pendingOffers = new ArrayList<Offer>();
 			
 			try {
-				Car car = new Car();
-				car.setId(id);
-				cars.removeCar(car);
+				pendingOffers = offers.getPendingOffers();
+			} catch (SQLException e) {
+				System.out.println("There was an error loading the currently pending offers".toUpperCase());
+			}
+			
+			if (pendingOffers.isEmpty()) {
+				System.out.println("There are no currently pending offers".toUpperCase());
+			} else {
 				
-				if (car != null) {
-					System.out.println("\nCar succesfully removed");
-//					offers.rejectOffersOfRemovedCar(id);
+				System.out.println(bannerCreator("These are the currently pending offers"));
+				int counter = 0;
+				Car car;
+				User user;
+				
+				for (Offer offer: pendingOffers) {
+					car = offer.getCar();
+					user = offer.getUser();
+					System.out.println(String.format("\n[%d] $%,d by %s %s for %d %s %s listed at $%,d", ++counter, offer.getAmount(), user.getFirstName(), user.getLastName(), car.getYear(), car.getMake(), car.getModel(), car.getPrice()));
 				}
 				
+				Integer offerNumber = 0;
+				Offer offer = null;
+				
+				do {
+					
+					System.out.println("\nWhich offer would you like to reject? (enter 0 to cancel)");
+					System.out.print("Offer number: ");
+					
+					try {
+						
+						offerNumber = Integer.parseInt(scan.nextLine());
+						
+						if (offerNumber < 0 || offerNumber > pendingOffers.size()) {
+							System.out.println("\nInvalid option".toUpperCase());
+							option = "try again";
+						} else if (offerNumber > 0) {
+							offer = pendingOffers.get(offerNumber - 1);
+							option = "";
+						}
+						
+					} catch (NumberFormatException e) {
+						System.out.println("\nInvalid input".toUpperCase());
+						offerNumber = -1;
+						option = "try again";
+					}
+					
+				} while("try again".equals(option) && offerNumber != 0 );
+					
+				if (offerNumber != 0) {
+					try {
+						offers.rejectOffer(offer);
+						System.out.println("\nOffer succesfully rejected!");
+					} catch (SQLException e) {
+						System.out.println("\nThere was an error rejecting the offer".toUpperCase());
+					}
+				}
+			}
+			
+		} else if ("remove car".equals(option)) {
+
+			ArrayList<Car> available = new ArrayList<Car>();
+			
+			try {
+				available = cars.getCars();
 			} catch (SQLException e) {
-				System.out.println("There was an error removing the car from the database".toUpperCase());
+				// set flag to reload
+			}
+
+			if (available.isEmpty()) {
+				System.out.println("There are no vehicles currently available".toUpperCase());
+			} else {
+				System.out.println(bannerCreator("We currently have the following vehicles available"));
+				int counter = 0;
+				for (Car car : available) {
+					System.out.println(String.format("\n[%d] %d %s %s with %,d miles for $%,d", ++counter, car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase(), car.getMileage(), car.getPrice()));				
+				}
+			}
+			
+			Integer carNumber = 0;
+			Car car = new Car();
+			
+			do {
+				
+				System.out.println("\nWhich car would you like to remove? (enter 0 to cancel)");
+				System.out.print("Car number: ");
+				
+				try {
+					
+					carNumber = Integer.parseInt(scan.nextLine());
+					
+					if (carNumber < 0 || carNumber > available.size()) {
+						System.out.println("\nInvalid option".toUpperCase());
+						option = "try again";
+					} else if (carNumber > 0) {
+						car = available.get(carNumber - 1);
+						carNumber = -1;
+						option = "";
+					}
+					
+				} catch (NumberFormatException e) {
+					System.out.println("\nInvalid input".toUpperCase());
+					carNumber = -1;
+					option = "try again";
+				}
+				
+			} while("try again".equals(option) && carNumber != 0);
+			
+			if (carNumber != 0) {
+				
+				try {
+					
+					cars.removeCar(car);
+					
+					System.out.println("\nCar succesfully removed");
+					
+				} catch (SQLException e) {
+					System.out.println("There was an error removing the car from the database".toUpperCase());
+				}
+				
 			}
 			
 		} else if ("show lot".equals(option)) {
 			
-			ArrayList<Car> available = cars.getCars();
-			System.out.println(bannerCreator("We currently have the following vehicles available"));
-			for (Car car : available) {
-				System.out.println(car.getYear() + " " + car.getMake().toUpperCase() + " " + car.getModel().toUpperCase() + " with " + String.format("%,d", car.getMileage()) + " miles for $" + String.format("%,d", car.getPrice()) +  "\n");
+			ArrayList<Car> available = new ArrayList<Car>();
+			
+			try {
+				available = cars.getCars();
+			} catch (SQLException e) {
+				// set flag to reload
+			}
+
+			if (available.isEmpty()) {
+				System.out.println("There are no vehicles currently available".toUpperCase());
+			} else {
+				System.out.println(bannerCreator("We currently have the following vehicles available"));
+				for (Car car : available) {
+					System.out.println(String.format("\n%d %s %s with %,d miles for $%,d", car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase(), car.getMileage(), car.getPrice()));				
+				}
 			}
 			
 		} else if ("view offers".equals(option)) {
 			
-			ArrayList<Offer> pendingOffers = offers.getPendingOffers();
+			ArrayList<Offer> pendingOffers = new ArrayList<Offer>();
 			
-			System.out.println("\nThese are the payments for all users\n");
-			for (Offer offer: pendingOffers) {
-				System.out.println(offer + "\n");
+			try {
+				pendingOffers = offers.getPendingOffers();
+			} catch (SQLException e) {
+				System.out.println("\nThere was an error loading offers".toUpperCase());
+			}
+			
+			if (pendingOffers.isEmpty()) {
+				System.out.println("\nThere are no currently pending offers".toUpperCase());
+			} else {
+				System.out.println(bannerCreator("These are the currently pending offers"));
+				int counter = 0;
+				Car car;
+				User user;
+				for (Offer offer: pendingOffers) {
+					car = offer.getCar();
+					user = offer.getUser();
+					System.out.println(String.format("\n[%d] $%,d by %s %s for %d %s %s listed at $%,d", ++counter, offer.getAmount(), user.getFirstName().toUpperCase(), user.getLastName().toUpperCase(), car.getYear(), car.getMake().toUpperCase(), car.getModel().toUpperCase(), car.getPrice()));
+				}
 			}
 			
 		} else if ("view payments".equals(option)) {
@@ -399,7 +706,7 @@ public class CarLotDriver {
 			line += "_";
 		}
 		
-		String string = "\n" + line + "\n\n" + s.toUpperCase() + "\n" + line + "\n";
+		String string = "\n" + line + "\n\n" + s.toUpperCase() + "\n" + line;
 		
 		return string;
 	}

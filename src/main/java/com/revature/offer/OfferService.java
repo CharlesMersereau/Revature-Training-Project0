@@ -1,9 +1,13 @@
 package com.revature.offer;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.revature.cars.CarService;
+import com.revature.dao.OfferDAO;
+import com.revature.dao.OfferDAOPostgres;
+import com.revature.pojo.Car;
 import com.revature.pojo.Offer;
 import com.revature.users.User;
 import com.revature.util.LoggerUtil;
@@ -11,89 +15,58 @@ import com.revature.util.LoggerUtil;
 public class OfferService implements Serializable {
 
 	private ArrayList<Offer> offers = new ArrayList<Offer>();
-	private transient LoggerUtil logger = new LoggerUtil();
-	private transient CarService lot = new CarService();
-	private int newIdNum = 0;
+	private LoggerUtil logger = new LoggerUtil();
+	private CarService lot = new CarService();
+	private OfferDAO offerDAO = new OfferDAOPostgres();
 	
-	public void makeOffer(Offer offer) {
+	public void makeOffer(Offer offer) throws SQLException {
 		
-		if (this.findOffer(offer) == -1) {
-			offer.setStatus("Pending");
-			offers.add(offer);
+		try {
+			offerDAO.makeOffer(offer);
 			logger.info("An offer has been made with id " + offer.getId());
-		} else {
-			System.out.println("\nA second offer cannot be made on the same car. If you'd like to make a new offer, please cancel the old offer first.\n".toUpperCase());
+		} catch (SQLException e) {
+			throw e;
 		}
 		
 	}
 	
-	public boolean acceptOffer(Integer offerId) {
+	public void acceptOffer(Offer offer) throws SQLException {
 		
-		int i = findOffer(offerId);
-		
-		if( i > -1) {
-			
-			Offer offer = offers.get(i); // potentially accepted offer
-			
-			if (offer.getStatus().equals("Rejected")) {
-				logger.warn("Attempt to accept a rejected offer: " + offerId);
-				System.out.println("\nYou can not accept an offer that has been rejected: ".toUpperCase() + offerId + "\n");
-				return false;
-			} else {
-				offer.setStatus("Accepted");
-				logger.info("An offer has been accepted of id: " + offerId);
-				
-				for(int j = 0; j < offers.size(); j++) {
-					if (offers.get(j).getCarId().equals(offer.getCarId())) {
-						if (!offers.get(j).getStatus().equals("Accepted")) {
-							rejectOffer(offers.get(j).getId());
-						}
-					}
-				}
-				
-				return true;
-			}
-			
-		} else {
-			System.out.println("\nAn offer matching this ID could not be found: ".toUpperCase() + offerId + "\n");
-			return false;
+		try {
+			offerDAO.acceptOffer(offer);
+			Car car = offer.getCar();
+			User user = offer.getUser();
+			logger.info(String.format("An offer has been accepted: [%d] $%,d for [%d] %d %s %s by [%d] %s %s", offer.getId(), offer.getAmount(), car.getId(), car.getYear(), car.getMake(), car.getModel(), user.getUserId(), user.getFirstName(), user.getLastName()));
+		} catch (SQLException e) {
+			throw e;
 		}
+		
 	}
 	
-	public boolean rejectOffer(Integer integer) {
-		Offer offer = getOffer(integer);
-		if(offer == null) {
-			System.out.println("\nOffer with that ID can not be found: ".toUpperCase() + integer + "\n");
-			return false;
+	public void rejectOffer(Offer offer) throws SQLException {
+		
+		try {
+			offerDAO.rejectOffer(offer.getId());
+			Car car = offer.getCar();
+			User user = offer.getUser();
+			logger.info(String.format("An offer has been rejected: [%d] $%,d for [%d] %d %s %s by [%d] %s %s", offer.getId(), offer.getAmount(), car.getId(), car.getYear(), car.getMake(), car.getModel(), user.getUserId(), user.getFirstName(), user.getLastName()));
+		} catch (SQLException e) {
+			throw e;
 		}
-		if (!offer.getStatus().equals("Accepted")) {
-			offer.setStatus("Rejected");
-			logger.info("An offer has been rejected of id: " + integer);
-			return true;
-		} else {
-			System.out.println("\nYou can not reject an offer that has been accepted: ".toUpperCase() + integer + "\n");
-			return false;
-		}
+		
 	}
 	
-	public boolean cancelOffer(Integer offerId) {
-		int i = findOffer(offerId);
-		
-		if ( i > -1 ) {
-			Offer temp = offers.get(i);
-			if (!temp.getStatus().equals("Accepted")) {
-				offers.remove(i);
-				logger.info("An offer has been cancelled on car " + temp.getCarId());
-				return true;
-			} else {
-				System.out.println("\nYou cannot cancel an offer once it has been accepted".toUpperCase());
-				return false;
-			}
-			
-		} else {
-			System.out.println("\nOffer with that ID can not be found: ".toUpperCase() + offerId + "\n");
-			return false;
+	public void cancelOffer(Offer offer) throws SQLException {
+
+		try {
+			offerDAO.cancelOffer(offer.getId());
+			Car car = offer.getCar();
+			User user = offer.getUser();
+			logger.info(String.format("An offer has been deleted: [%d] $%,d for [%d] %d %s %s by [%d] %s %s", offer.getId(), offer.getAmount(), car.getId(), car.getYear(), car.getMake(), car.getModel(), user.getUserId(), user.getFirstName(), user.getLastName()));
+		} catch (SQLException e) {
+			throw e;
 		}
+		
 	}
 	
 	public Offer getOffer(Integer integer) {
@@ -108,7 +81,7 @@ public class OfferService implements Serializable {
 	
 	public int findOffer(Offer offer) {
 		for (int i = 0; i < offers.size(); i++) {
-			if (offers.get(i).getUserId().equals(offer.getUserId()) && offers.get(i).getCarId().equals(offer.getCarId())) {
+			if (offers.get(i).getUser().getUserId() == offer.getUser().getUserId() && offers.get(i).getCar().getId() == offer.getCar().getId()) {
 				return i;
 			} 
 		}
@@ -124,38 +97,52 @@ public class OfferService implements Serializable {
 		return -1;
 	}
 	
-	public ArrayList<Offer> getOffers() {
+	public ArrayList<Offer> getOffers() throws SQLException {
+		
+		try {
+			offers = offerDAO.getOffers();
+		} catch (SQLException e) {
+			throw e;
+		}
+		
 		return offers;
 	}
 
-	public ArrayList<Offer> getPendingOffers() {
+	public ArrayList<Offer> getPendingOffers() throws SQLException {
 		
 		ArrayList<Offer> pendingOffers = new ArrayList<Offer>();
 		
-		for (int i = 0; i < offers.size(); i++) {
-			if (offers.get(i).getStatus().equals("Pending")) {
-				pendingOffers.add(offers.get(i));
-			} 
+		try {
+			pendingOffers = offerDAO.getPendingOffers();
+		} catch (SQLException e) {
+			throw e;
 		}
+		
 		return pendingOffers;
 	}
 	
-	public ArrayList<Offer> getUserOffers(String username) {
-
+	public ArrayList<Offer> getUserOffers(Integer userId) throws SQLException {
+		
 		ArrayList<Offer> userOffers = new ArrayList<Offer>();
 		
-		for (int i = 0; i < offers.size(); i++) {
-			if (offers.get(i).getUserId().equals(username)) {
-				userOffers.add(offers.get(i));
-			} 
+		try {
+			userOffers = offerDAO.getUserOffers(userId);
+		} catch (SQLException e) {
+			throw e;
 		}
+		
 		return userOffers;
 	}
 	
 	public void rejectOffersOfRemovedCar(Integer carId) {
 		for (int i = 0; i < offers.size(); i++) {
-			if (offers.get(i).getCarId().equals(carId)) {
-				rejectOffer(offers.get(i).getId());
+			if (offers.get(i).getCar().getId().equals(carId)) {
+				try {
+					rejectOffer(offers.get(i));
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			} 
 		}
 	}

@@ -1,9 +1,9 @@
 package com.revature.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import com.revature.users.User;
@@ -16,13 +16,18 @@ public class UserDAOPostgres implements UserDAO {
 	@Override
 	public User authenticate(User u) {
 			
-		String sql = "select username,first_name,last_name,user_id,user_role_id from users where username = '" + u.getUsername() + "' and user_password = '" + u.getPassword() + "'";
+		String sql = "select username,first_name,last_name,user_id,user_role_id from users where username = ? and user_password = ?";
+		
 		Connection conn = ConnectionFactory.getConnection();
-		Statement stmt;
+		
+		PreparedStatement stmt;
 		
 		try {
-			stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(sql);
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, u.getUsername());
+			stmt.setString(2, u.getPassword());
+			
+			ResultSet rs = stmt.executeQuery();
 			
 			if (rs.next()) {
 		        
@@ -44,7 +49,7 @@ public class UserDAOPostgres implements UserDAO {
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				e.printStackTrace();
+				logger.warn(e.toString());
 			}
 		}
         
@@ -53,14 +58,20 @@ public class UserDAOPostgres implements UserDAO {
 	
 	@Override
 	public ArrayList<ArrayList<String>> loadUserOptions(User u) {
-		String sql = "select user_menu_option, user_menu_option_description from user_menu_options where user_role_id = " + u.getUserRoleId() + " or user_role_id is null order by option_order";
+		
+		String sql = "select user_menu_option, user_menu_option_description from user_menu_options where user_role_id = ? or user_role_id is null order by option_order";
+		
 		Connection conn = ConnectionFactory.getConnection();
-		Statement stmt;
+		
+		PreparedStatement stmt;
+		
 		ArrayList<ArrayList<String>> options = new ArrayList<ArrayList<String>>();
 		
 		try {
-			stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(sql);
+			stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, u.getUserRoleId());
+			
+			ResultSet rs = stmt.executeQuery();
 			
 			while (rs.next()) {
 				
@@ -78,7 +89,7 @@ public class UserDAOPostgres implements UserDAO {
 			try {
 				conn.close();
 			} catch (SQLException e) {
-				e.printStackTrace();
+				logger.warn(e.toString());
 			}
 		}
         
@@ -87,15 +98,23 @@ public class UserDAOPostgres implements UserDAO {
 
 	@Override
 	public void registerCustomer(User u) throws SQLException {
-		String sql = "insert into users (username,user_password,first_name,last_name,user_role_id) values ('" + u.getUsername() + "','" + u.getPassword() + "','" + u.getFirstName() + "','" + u.getLastName() + "',0)";
+		
+		String sql = "insert into users (username,user_password,first_name,last_name,user_role_id) values (?,?,?,?,?)";
+		
 		Connection conn = ConnectionFactory.getConnection();
-		Statement stmt;
+		
+		PreparedStatement stmt;
 		
 		try {
 			
-			stmt = conn.createStatement();
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, u.getUsername());
+			stmt.setString(2, u.getPassword());
+			stmt.setString(3, u.getFirstName());
+			stmt.setString(4, u.getLastName());
+			stmt.setInt(5, 0);
 			
-			stmt.executeUpdate(sql);
+			stmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			throw e;

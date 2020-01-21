@@ -1,39 +1,32 @@
 package com.revature.pojo;
 
-import java.io.Serializable;
+import com.revature.users.User;
 
-public class Offer implements Serializable {
+public class Offer {
 	
-	private Integer userId;
-	private Integer carId;
+	private User user;
+	private Car car;
 	private Integer amount;
 	private String status;
 	private Integer id;
 	private Integer numberOfMonths = 36;
 	
-	public Offer(Integer userId, Integer carId, Integer amount, Integer numberOfMonths) {
-		this.userId = userId;
-		this.carId = carId;
-		this.amount = amount;
-		this.numberOfMonths = numberOfMonths;
-	}
-	
 	public Offer() {};
 	
-	public Integer getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
-	public Integer getCarId() {
-		return carId;
+	public Car getCar() {
+		return car;
 	}
 	
-	public void setCarId(Integer carId) {
-		this.carId = carId;
+	public void setCar(Car car) {
+		this.car = car;
 	}
 	
 	public Integer getAmount() {

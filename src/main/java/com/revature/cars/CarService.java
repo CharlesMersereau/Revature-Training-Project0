@@ -31,7 +31,7 @@ public class CarService {
 		}
 	}
 	
-	public int findCar(String carId) {
+	public int findCar(Integer carId) {
 		for (int i = 0; i < cars.size(); i++) {
 			if (cars.get(i).getId().equals(carId)) {
 				return i;
@@ -43,8 +43,15 @@ public class CarService {
 	public Car getCar(Integer i) {
 		return cars.get(i);
 	}
-
-	public ArrayList<Car> getCars() {
+	
+	public ArrayList<Car> getCars() throws SQLException {
+		
+		try {
+			cars = carDAO.getCars();
+		} catch (SQLException e) {
+			throw e;
+		}
+		
 		return cars;
 	}
 
@@ -58,10 +65,6 @@ public class CarService {
 		} catch (SQLException e) {
 			throw e;
 		}
-	}
-	
-	public void loadCars() throws SQLException {
-		cars = carDAO.getCars();
 	}
 	
 	public void removeCar(Car car) throws SQLException {
